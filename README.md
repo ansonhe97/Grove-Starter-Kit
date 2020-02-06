@@ -10,12 +10,12 @@ Grove Starter Kit for Arduino is one of the best Arduino Starter Kit for beginne
 2. **Grove - Buzzer:** Piezo Buzzer
 3. **Grove - OLED Display 0.96":** 128×64 dot resolution High brightness,self-emission and high contrast ratio Big screen on a compact design Low power consumption.
 4. **Grove - Button:** Push button for human input interfaces
-5. **Grove - Rotary Potentiometer** Rotary knob for human input interfaces
-6. **Grove - Light** Detects surrounding light intensity
-7. **Grove - Sound** Detects surrounding sound intensity
-8. **Grove - Temperature & Humidity Sensor** Detects surrounding temperature and humidity values
-9. **Grove - Barometer Sensor** Detects surrounding atmospheric pressure
-10. **Grove - 3-Axis Accelerator** Detects object acceleration
+5. **Grove - Rotary Potentiometer:** Rotary knob for human input interfaces
+6. **Grove - Light:** Detects surrounding light intensity
+7. **Grove - Sound:** Detects surrounding sound intensity
+8. **Grove - Temperature & Humidity Sensor:** Detects surrounding temperature and humidity values
+9. **Grove - Barometer Sensor:** Detects surrounding atmospheric pressure
+10. **Grove - 3-Axis Accelerator:** Detects object acceleration
 11. **Seeeduino Lotus:** Arduino Compatible Board with Grove Ports 
 
 ### Unlock Your First Open Source Hardware
@@ -715,7 +715,7 @@ This is the last sensor, the triaxial accelerometer, and with this module, you c
   - When you're done, click Verify to check for syntax errors.Verify that there are no errors, and you can upload the code.
 
 ```cpp
-// Item Nine — Music Dynamic Rhythm Lamp
+//Music Dynamic Rhythm Lamp
 #define NTD0 -1
 #define NTD1 294
 #define NTD2 330
@@ -858,10 +858,10 @@ delay(4000);
   - When you're done, click Verify to check for syntax errors.Verify that there are no errors, and you can upload the code.
 
 ```Cpp
-   // Item Ten — light Induction Desk Lamp
+   //light Induction Desk Lamp
 int soundPin = A2; // Analog sound sensor is to be attached to analog
 int lightPin = A1; //Analog light sensor is to be attached to analog
-int ledPin = 6; // Digital LED is to be attached to digital
+int ledPin = 4; // Digital LED is to be attached to digital
 
 void setup() {
   pinMode(ledPin, OUTPUT);
