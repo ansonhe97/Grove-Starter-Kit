@@ -1,22 +1,22 @@
 # Grove Starter Kit For Arduino
 
-Grove Starter Kit for Arduino is one of the best Arduino Starter Kit for beginners. It includes one Arduino compatible Board and 10 additional Arduino sensors and all in one-piece of PCB design. You can build any Arduino project you like with this Grove Starter Kit.
-
-![](https://raw.githubusercontent.com/littletwany/PICTURE/master/img/pic.png)
+Grove Starter Kit for Arduino is one of the best Arduino Starter Kit for beginners. It includes one Arduino compatible Board and 10 additional Arduino sensors and all in one-piece of PCB design. All the modules have been connected to the Seeeduino through the PCB stamp holes so no Grove cables are needed to connect. Of course, you can also take the modules out and use Grove cables to connect the modules. You can build any Arduino project you like with this Grove Starter Kit.
 
 ## Hardware Overview
 
-1. **Grove - LED:** Simple LED module
-2. **Grove - Buzzer:** Piezo Buzzer
-3. **Grove - OLED Display 0.96":** 128×64 dot resolution High brightness,self-emission and high contrast ratio Big screen on a compact design Low power consumption.
-4. **Grove - Button:** Push button for human input interfaces
-5. **Grove - Rotary Potentiometer:** Rotary knob for human input interfaces
-6. **Grove - Light:** Detects surrounding light intensity
-7. **Grove - Sound:** Detects surrounding sound intensity
-8. **Grove - Temperature & Humidity Sensor:** Detects surrounding temperature and humidity values
-9. **Grove - Barometer Sensor:** Detects surrounding atmospheric pressure
-10. **Grove - 3-Axis Accelerator:** Detects object acceleration
-11. **Seeeduino Lotus:** Arduino Compatible Board with Grove Ports 
+![](https://raw.githubusercontent.com/ansonhe97/rawimages/master/img/20200206211934.png)
+
+1. **[Grove - LED](http://wiki.seeedstudio.com/Grove-Red_LED/):** Simple LED module
+2. **[Grove - Buzzer](http://wiki.seeedstudio.com/Grove-Buzzer/):** Piezo Buzzer
+3. **[Grove - OLED Display 0.96"](http://wiki.seeedstudio.com/Grove-OLED_Display_0.96inch/):** 128×64 dot resolution High brightness,self-emission and high contrast ratio Big screen on a compact design Low power consumption.
+4. **[Grove - Button](http://wiki.seeedstudio.com/Grove-Button/):** Push button for human input interfaces
+5. **[Grove - Rotary Potentiometer](http://wiki.seeedstudio.com/Grove-Rotary_Angle_Sensor/):** Rotary knob for human input interfaces
+6. **[Grove - Light](http://wiki.seeedstudio.com/Grove-Light_Sensor/):** Detects surrounding light intensity
+7. **[Grove - Sound](http://wiki.seeedstudio.com/Grove-Sound_Sensor/):** Detects surrounding sound intensity
+8. **[Grove - Temperature & Humidity Sensor](http://wiki.seeedstudio.com/Grove-TemperatureAndHumidity_Sensor/):** Detects surrounding temperature and humidity values
+9. **[Grove - Barometer Sensor](http://wiki.seeedstudio.com/Grove-Temperature_Humidity_Pressure_Gas_Sensor_BME680/):** Detects surrounding atmospheric pressure
+10. **[Grove - 3-Axis Accelerator](http://wiki.seeedstudio.com/Grove-3-Axis_Digital_Accelerometer-1.5g/):** Detects object acceleration
+11. **[Seeeduino Lotus](http://wiki.seeedstudio.com/Seeeduino_Lotus/):** Arduino Compatible Board with Grove Ports 
 
 ### Unlock Your First Open Source Hardware
 
@@ -25,37 +25,38 @@ Connect your Board to Power, it becomes a Smart indoor environmental data sensin
 !!!Note
         By default, Grove modules are connected to Seeeduino via PCB stamp holes. This means you don't need to use Grove cables to connect if not broken out. The default pins are as follow:
 
-|Modules|Pins|
-|---|---|
-|LED|D4|
-|Buzzer|D5|
-|OLED Display 0.96"|I2C|
-|Button|D6|
-|Rotary Potentiometer|A0|
-|Light|A1|
-|Sound|A2|
-|Temperature & Humidity Sensor|D3|
-|Barometer Sensor|I2C|
-|3-Axis Accelerator|I2C|
+|Modules|Interface|Pins/Address|
+|---|---|---|
+|LED|Digital|D4|
+|Buzzer|Digital|D5|
+|OLED Display 0.96"|I2C|I2C, 0x78(default)|
+|Button|Digital|D6|
+|Rotary Potentiometer|Analog|A0|
+|Light|Analog|A1|
+|Sound|Analog|A2|
+|Temperature & Humidity Sensor|Digital|D3|
+|Barometer Sensor|I2C|I2C, 0x76(default)/0x77(optional)|
+|3-Axis Accelerator|I2C|I2C, 0x4c(default)|
 
 
 ## Part List
 
-- **Sensors:**
-  - Temperature & Humidity Sensors
-  - 3-Axis Accelerometers
-  - Barometer Sensors
-  - Light Sensors
-  - Sound Sensors
-
-- **Output module:**
-  - OLED display
-  - LED
-  - Buzzer
-  
-- **Input module:**
-  - Rotary Potentiometer
-  - Button
+|Modules|Quantity|
+|---|---|
+|**Sensors**||
+|Temperature & Humidity Sensors|x1|
+|3-Axis Accelerometers|x1|
+|Barometer|x1|
+|Light Sensor|x1|
+|Sound Sensor|x1|
+|**Input Modules**||
+|OLED Display|x1|
+|LED|x1|
+|Buzzer|x1|
+|**Output Modules**||
+|Rotary Potentiometer|x1|
+|Button|x1|
+|Grove Cables|x10|
 
 ## Learning Objectives
 
@@ -880,7 +881,7 @@ if (soundState > 50 || lightState < 10) {
 }
 ```
 
-- **The code analysis:**
+- **Code analysis:**
 
   - **if (soundState > 50 || lightState < 10) { }**
 
