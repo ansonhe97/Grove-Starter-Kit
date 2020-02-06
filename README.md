@@ -57,6 +57,7 @@ Connect your Board to Power, it becomes a Smart indoor environmental data sensin
 |Rotary Potentiometer|x1|
 |Button|x1|
 |Grove Cables|x10|
+|Micro USB Cable|x1|
 
 ## Learning Objectives
 
@@ -255,7 +256,7 @@ Both the sensor and the LED use digital signals, so they should be connected to 
 
 ```Cpp
 //Button to turn ON/OFF LED
-// constants won't change. They're used here to set pin numbers:
+//Constants won't change. They're used here to set pin numbers:
 const int buttonPin = 6;     // the number of the pushbutton pin
 const int ledPin =  4;      // the number of the LED pin
 
