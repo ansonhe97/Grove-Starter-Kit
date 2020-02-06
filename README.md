@@ -101,10 +101,12 @@ Connect your Board to Power, it becomes a Smart indoor environmental data sensin
 2. Click on `Tools` -> `Board` to select the correct Development Board Model. Select **Arduino/Genuino Uno** as Board.
 
 ![](https://raw.githubusercontent.com/littletwany/PICTURE/master/img/board.png)
-1. Click `Tools` -> `Port` to select the correct Port (the Serial Port shown in Device Manager in the previous step). In this case, `COM6` is selected.
+
+3. Click `Tools` -> `Port` to select the correct Port (the Serial Port shown in Device Manager in the previous step). In this case, `COM6` is selected.
 
 ![](https://raw.githubusercontent.com/littletwany/PICTURE/master/img/port.png)
-1. Create a new Arduino file `Hello.ino`, then copy the following code into it:
+
+4. Create a new Arduino file `Hello.ino`, then copy the following code into it:
 
 ```Cpp
 void setup() {
@@ -116,11 +118,11 @@ delay(1000); //delay of 1 second
 }
 ```
 
-  5. In the upper left corner of the Arduino IDE, there are two buttons, Compile and Upload. First, press the compile button(Left) to compile. After the compilation is successful, press the upload button(Right).
+5. In the upper left corner of the Arduino IDE, there are two buttons, Compile and Upload. First, press the compile button(Left) to compile. After the compilation is successful, press the upload button(Right).
 
 ![](https://raw.githubusercontent.com/littletwany/PICTURE/master/img/func.png)
 
-  6. Navigate to `Tools` -> `Serial Monitor`, or click the Serial Monitor in the upper right corner, you can see the program running results
+6. Navigate to `Tools` -> `Serial Monitor`, or click the Serial Monitor in the upper right corner, you can see the program running results
 
 ![](https://raw.githubusercontent.com/littletwany/PICTURE/master/img/print.png)
 
