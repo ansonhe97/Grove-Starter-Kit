@@ -56,8 +56,8 @@ Connect your Board to Power, it becomes a Smart indoor environmental data sensin
 |**Output Modules**||
 |Rotary Potentiometer|x1|
 |Button|x1|
-|Grove Cables|x10|
-|Micro USB Cable|x1|
+|**Grove Cables**|x10|
+|**Micro USB Cable**|x1|
 
 ## Learning Objectives
 
