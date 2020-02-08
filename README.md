@@ -38,7 +38,6 @@ Connect your Board to Power, it becomes a Smart indoor environmental data sensin
 |Barometer Sensor|I2C|I2C, 0x76(default)/0x77(optional)|
 |3-Axis Accelerator|I2C|I2C, 0x4c(default)|
 
-
 ## Part List
 
 |Modules|Quantity|
@@ -86,16 +85,16 @@ Connect your Board to Power, it becomes a Smart indoor environmental data sensin
 
 #### Install the Arduino IDE
 
-  - Arduino IDE is an integrated development environment for Arduino, which is used for single-chip microcomputer software programming, downloading, testing and so on.
-  - Download [Arduino IDE](https://www.arduino.cc/en/Main/Software) for your desired operating system here.
+- Arduino IDE is an integrated development environment for Arduino, which is used for single-chip microcomputer software programming, downloading, testing and so on.
+- Download [Arduino IDE](https://www.arduino.cc/en/Main/Software) for your desired operating system here.
 
 #### Install the USB driver
 
-  - Arduino connects to the PC via a USB cable. The USB driver depends on the type of USB chip you're using on your Arduino. *Note: USB chips are usually printed on the back of the development board.*
+- Arduino connects to the PC via a USB cable. The USB driver depends on the type of USB chip you're using on your Arduino. *Note: USB chips are usually printed on the back of the development board.*
 
-    - Download the [CP2102 USB Driver](https://www.silabs.com/products/development-tools/software/usb-to-uart-bridge-vcp-drivers). Note: Download according to your OS.
-    - After the driver installation is completed, connect Arduino to the USB port of PC with USB cable. For Windows users, You can see it in `My Computer` -> `Properties` -> `Hardware` - `Device Management`. A `COM` will appear.
-    - If the driver is not installed, or if the driver is installed incorrectly (not matching the chip model), it will appear as an "unknown device" in the device manager. At this point, the driver should be reinstalled.
+  - Download the [CP2102 USB Driver](https://www.silabs.com/products/development-tools/software/usb-to-uart-bridge-vcp-drivers). Note: Download according to your OS.
+  - After the driver installation is completed, connect Arduino to the USB port of PC with USB cable. For Windows users, You can see it in `My Computer` -> `Properties` -> `Hardware` - `Device Management`. A `COM` will appear.
+  - If the driver is not installed, or if the driver is installed incorrectly (not matching the chip model), it will appear as an "unknown device" in the device manager. At this point, the driver should be reinstalled.
 
 #### Start the Arduino IDE
 
@@ -455,7 +454,7 @@ The sound sensor can detect the sound intensity of the environment, and its outp
   - **Module connection:**
     1. Default connection by PCB stamp hole.
     2. Use Grove cables to connect the Grove LED to Seeeduino Lotus's digital signal interface **D4**, Connect the Grove Sound Sensor to Seeeduino Lotus's analog signal interface **A2**.
-    - The Seeeduino is then connected to the computer via a USB cable.
+  - The Seeeduino is then connected to the computer via a USB cable.
 
 - **Software code:**
   - Open Arduino IDE.
@@ -512,7 +511,7 @@ Have you ever wondered about the temperature and humidity of your surroundings? 
   - **Module connection:**
     1. Default connection by PCB stamp hole.
     2. Use Grove cable to connect the OLED to Seeeduino Lotus's **I2C** interface (note: I2C's default address is 0x78). Connect the Grove Temperature and Humidity Sensor to Seeeduino Lotus's digital signal interface **D3**.
-    - The Seeeduino is then connected to the computer via a USB cable.
+  - The Seeeduino is then connected to the computer via a USB cable.
 
 - **Software code:**
   - Open Arduino IDE.
