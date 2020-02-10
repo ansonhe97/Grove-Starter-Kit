@@ -1,6 +1,6 @@
 # Grove Starter Kit For Arduino
 
-Grove Starter Kit for Arduino is one of the best Arduino Starter Kit for beginners. It includes one Arduino compatible Board and 10 additional Arduino sensors and all in one-piece of PCB design. All the modules have been connected to the Seeeduino through the PCB stamp holes so no Grove cables are needed to connect. Of course, you can also take the modules out and use Grove cables to connect the modules. You can build any Arduino project you like with this Grove Starter Kit.
+Grove Starter Kit for Arduino is one of the best Arduino Starter Kit for beginners. It includes one Arduino compatible Board and 10 additional Arduino sensors and all in one-piece of PCB design. **All the modules have been connected to the Seeeduino through the PCB stamp holes so no Grove cables are needed to connect**. Of course, you can also take the modules out and use Grove cables to connect the modules. You can build any Arduino project you like with this Grove Starter Kit.
 
 ## Hardware Overview
 
@@ -14,7 +14,7 @@ Grove Starter Kit for Arduino is one of the best Arduino Starter Kit for beginne
 6. **[Grove - Light](http://wiki.seeedstudio.com/Grove-Light_Sensor/):** Detects surrounding light intensity
 7. **[Grove - Sound](http://wiki.seeedstudio.com/Grove-Sound_Sensor/):** Detects surrounding sound intensity
 8. **[Grove - Temperature & Humidity Sensor](http://wiki.seeedstudio.com/Grove-TemperatureAndHumidity_Sensor/):** Detects surrounding temperature and humidity values
-9. **[Grove - Barometer Sensor](http://wiki.seeedstudio.com/Grove-Temperature_Humidity_Pressure_Gas_Sensor_BME680/):** Detects surrounding atmospheric pressure
+9. **[Grove - Barometer Sensor](http://wiki.seeedstudio.com/Grove-Barometer_Sensor-BMP280/):** Detects surrounding atmospheric pressure
 10. **[Grove - 3-Axis Accelerator](http://wiki.seeedstudio.com/Grove-3-Axis_Digital_Accelerometer-1.5g/):** Detects object acceleration
 11. **[Seeeduino Lotus](http://wiki.seeedstudio.com/Seeeduino_Lotus/):** Arduino Compatible Board with Grove Ports 
 
@@ -49,12 +49,13 @@ Connect your Board to Power, it becomes a Smart indoor environmental data sensin
 |Light Sensor|x1|
 |Sound Sensor|x1|
 |**Input Modules**||
-|OLED Display|x1|
-|LED|x1|
-|Buzzer|x1|
-|**Output Modules**||
 |Rotary Potentiometer|x1|
 |Button|x1|
+|**Output Modules**||
+|LED|x1|
+|Buzzer|x1|
+|**Display Module**||
+|OLED Display|x1|
 |**Grove Cables**|x10|
 |**Micro USB Cable**|x1|
 
@@ -65,67 +66,63 @@ Connect your Board to Power, it becomes a Smart indoor environmental data sensin
 - Communication principles and methods for sensors.
 - Hands-on implementation of Open Source Hardware projects.
 
-## Arduino Background and Preparations
+## How to get started with Arduino
 
-### What is Arduino
+### Install the Arduino IDE
 
-#### 1. The birth of Arduino
+- **Arduino IDE** is an integrated development environment for Arduino, which is used for single-chip microcomputer software programming, downloading, testing and so on.
+- Download and Install [Arduino IDE](https://www.arduino.cc/en/Main/Software) for your desired operating system here.
 
-- Arduino is a kind of convenient, flexible and easy-to-use open source electronic platform, including hardware (Arduino board of various models) and software (Arduino IDE). It was designed by Italian teacher Massimo Banzi and Spain traditional engineer David Cuartielles. It solved the problem of the students can't find cheap microprocessors. Massimo Banzi liked to go to a bar called "di Re Arduino", this is according to the Italian king named after about one thousand years ago, to mark the place, they also name their board Arduino.
+![](https://raw.githubusercontent.com/ansonhe97/rawimages/master/img/20200210114649.jpg)
 
-- It is not only suitable for rapid prototyping by engineers, but also for artists, designers, hobbyists and friends who are interested in interaction, and it is almost a must-have tool for modern makers!
-
-#### 2. Introduction to Seeeduino and & Difference with Arduino
-
-- **Seeeduino** is an Arduino-compatible board, designed and manufactured by Seeed Studio in Shenzhen, China. It is fully compatible with Arduino IDE, shields and other accessories.
-
-- Based on an early Arduino design from Diecimila, it is available in two models with ATmega168 and ATmega328 microprocessors, compatible with the pin layout and dimensions of Diecimila. Improvements have been made in both auto-sensing USB and external power supply, as well as better power supply circuits on board, significantly improving flexibility and user experience.
-
-### How to get started with Arduino IDE
-
-#### Install the Arduino IDE
-
-- Arduino IDE is an integrated development environment for Arduino, which is used for single-chip microcomputer software programming, downloading, testing and so on.
-- Download [Arduino IDE](https://www.arduino.cc/en/Main/Software) for your desired operating system here.
-
-#### Install the USB driver
+### Install the USB driver
 
 - Arduino connects to the PC via a USB cable. The USB driver depends on the type of USB chip you're using on your Arduino. *Note: USB chips are usually printed on the back of the development board.*
 
-  - Download the [CP2102 USB Driver](https://www.silabs.com/products/development-tools/software/usb-to-uart-bridge-vcp-drivers). Note: Download according to your OS.
-  - After the driver installation is completed, connect Arduino to the USB port of PC with USB cable. For Windows users, You can see it in `My Computer` -> `Properties` -> `Hardware` - `Device Management`. A `COM` will appear.
+  - Download the [CP2102 USB Driver](https://www.silabs.com/products/development-tools/software/usb-to-uart-bridge-vcp-drivers). **Note:** Download according to your OS.
+  - After the driver installation is completed, connect Arduino to the USB port of PC with USB cable. 
+    - **For Windows users:** You can see it in `My Computer` -> `Properties` -> `Hardware` -> `Device Management`. A `COM` will appear.
+    - **For Mac OS users:** You can navigate to `` on the top left corner, and choose `About this Mac` -> `System Report...` -> `USB`. A CP2102 USB Driver should appear.
   - If the driver is not installed, or if the driver is installed incorrectly (not matching the chip model), it will appear as an "unknown device" in the device manager. At this point, the driver should be reinstalled.
 
-#### Start the Arduino IDE
+### Start the Arduino IDE
 
-1. Open the Arduino IDE on your PC.
+1. Open the **Arduino IDE** on your PC.
 2. Click on `Tools` -> `Board` to select the correct Development Board Model. Select **Arduino/Genuino Uno** as Board.
 
 ![](https://raw.githubusercontent.com/littletwany/PICTURE/master/img/board.png)
 
-3. Click `Tools` -> `Port` to select the correct Port (the Serial Port shown in Device Manager in the previous step). In this case, `COM6` is selected.
+3. Click `Tools` -> `Port` to select the correct Port (the Serial Port shown in Device Manager in the previous step). In this case, `COM6` is selected. **For Mac OS users**, it should be `/dev/cu.SLAB_USBtoUART`.
 
 ![](https://raw.githubusercontent.com/littletwany/PICTURE/master/img/port.png)
 
-4. Create a new Arduino file `Hello.ino`, then copy the following code into it:
+1. Create a new Arduino file and name it `Hello.ino`, then copy the following code into it:
 
 ```Cpp
 void setup() {
-Serial.begin(9600); // initializes the serial port with a baud rate of 9600
+  Serial.begin(9600); // initializes the serial port with a baud rate of 9600
 }
 void loop() {
-Serial.println("hello, world"); // prints a string to a serial port
-delay(1000); //delay of 1 second
+  Serial.println("hello, world"); // prints a string to a serial port
+  delay(1000); //delay of 1 second
 }
 ```
 
-5. In the upper left corner of the Arduino IDE, there are two buttons, Compile and Upload. First, press the compile button(Left) to compile. After the compilation is successful, press the upload button(Right).
+5. In the upper left corner of the Arduino IDE, there are two buttons, **Verify and Upload**. First, press the Verify button(✓) to compile. After the compilation is successful, press the upload button(→).
 
 ![](https://raw.githubusercontent.com/littletwany/PICTURE/master/img/func.png)
 
-6. Navigate to `Tools` -> `Serial Monitor`, or click the Serial Monitor in the upper right corner, you can see the program running results
+6. Navigate to `Tools` -> `Serial Monitor`, or click the **Serial Monitor** in the upper right corner(Magnifier Symbol), you can see the program running results:
 
 ![](https://raw.githubusercontent.com/littletwany/PICTURE/master/img/print.png)
+
+## What are Arduino Libraries
+
+The Arduino environment can be extended through the use of libraries, just like most other programming platforms. Libraries provide extra functionalities for use in sketches, i.e. working with specific hardware or manipulating data. To use a library in a sketch, select it from **Sketch** ->**Include Library**.
+
+![](https://raw.githubusercontent.com/ansonhe97/rawimages/master/img/20200210120746.jpg)
+
+For more information, please also visit [How to install Arduino Libraries](http://wiki.seeedstudio.com/How_to_install_Arduino_Library/).
 
 ## Building The First Open Source Control System
 
@@ -165,13 +162,11 @@ We already know that the input system, the controller and the output system comm
 
 ## Section 1: Output Control
 
-### 1. Turn on the LED Light
+### 1. LED
 
-- **Project description:** how to light up the LED module
+We have completed the output "Hello world" program. Now let's learn how to light the LED module. We know the three basic components of a control system: Input, Control, and Output. But lighting up LED uses only the output, not the input. Seeeduino is the control unit, LED module is the output unit and the output signal is digital signal.
 
-We have completed the output "Hello world" program.Now let's learn how to light the LED module. We know the three basic components of a control system: Input, Control, and Output. But lighting up LED uses only the output, not the input. Seeeduino is the control unit, LED module is the output unit and the output signal is digital signal.
-
-- **List of materials:**
+- **Components Required:**
   1. Seeeduino Lotus
   2. Grove LED
   3. Grove Cable(If Broken out)
@@ -182,14 +177,13 @@ We have completed the output "Hello world" program.Now let's learn how to light 
     2. Use a Grove cable to connect the Grove LED to Seeeduino Lotus's digital interface **D4**.  
   - Connect the Seeeduino to the computer through the USB cable.
   - Make sure the cables are connected correctly, or you may damage the boards.
-  - **Hardware Analysis:** The development board is the control unit and the LED module is the output unit.
   
 - **Software code:**
-  - Open Arduino IDE. 
+  - Open Arduino IDE.
   - You can copy the code directly to Arduino IDE. Although we encourage you to type the code out by hand to develop your skills.
   - When you're done, click Verify to check for syntax errors. Verify that there are no errors, and you can upload the code.
 
-```C
+```Cpp
 //LED Blink
 //The LED will turn on for one second and then turn off for one second
 int ledPin = 4;
@@ -214,10 +208,48 @@ void loop() {
   - **digitalWrite(ledPin, LOW);**<br>When we set the led as output, low stands for sending low level to the pin, LED turns off.
   - **delay(1000);**<br>The number in parentheses represents the number of milliseconds of delay.1000 milliseconds is 1 second, which means the delay is 1 second.
 
-- **Practice**: Adjust how quickly led flashing of lights.
-  - Functional: By modifying the software code to adjust LED module to  flicker quicker.
-  - The hardware connection and the analysis of hardware are the same as the above.
-  - Try adjusting the Numbers in brackets to change the frequency at which the bulb flashes. Such as "delay(500);",turn the LED on for 500ms and off for 500ms.
+- **Demo Effect and Serial Print Result:**
+
+The LED module will be 1 second on and 1 second off.
+
+### 2. Buzzer
+
+Just like the LED module, Buzzer is also an output module, instead of lighting up it produces a beep noise. This can be used for many  situations for indication purposes.
+
+- **Components Required:**
+  1. Seeeduino Lotus
+  2. Grove Buzzer
+  3. Grove Cable(If Broken out)
+
+- **Hardware connection:**
+  - **Module connection**
+    1. Default connection by PCB stamp hole.
+    2. Use a Grove cable to connect the Grove Buzzer to Seeeduino Lotus's digital interface **D5**.  
+  - Connect the Seeeduino to the computer through the USB cable.
+  
+- **Software code:**
+  - Open Arduino IDE.
+  - You can copy the code directly to Arduino IDE. Although we encourage you to type the code out by hand to develop your skills.
+  - When you're done, click Verify to check for syntax errors. Verify that there are no errors, and you can upload the code.
+
+```Cpp
+//Buzzer
+//The Buzzer will beep  for one second and then off for one second
+int BuzzerPin = 5;
+void setup() {
+    pinMode(BuzzerPin, OUTPUT);
+}
+void loop() {
+    digitalWrite(BuzzerPin, HIGH);
+    delay(1000);
+    digitalWrite(BuzzerPin, LOW);
+    delay(1000);
+}
+```
+
+- **Demo Effect and Serial Print Result:**
+
+The buzzer will beep for 1 second on and off continuously.
 
 ## Section 2: Input Control
 
@@ -229,7 +261,7 @@ The first thing we need to know is that the input of the button is a digital sig
 
 - **Practice:** Use button to turn ON and OFF the LED module
 
-- **List of materials:**
+- **Components Required:**
     1. Seeeduino Lotus
     2. Grove LED
     3. Grove Button
@@ -301,13 +333,15 @@ void loop() {
   - **if (buttonState == HIGH) {**<br>  **digitalWrite(ledPin, HIGH);**<br>**} else {**<br>**digitalWrite(ledPin, LOW);**  <br> **}**<br>The usage of the statement is: if the logical expression in parentheses is true, execute the statement in curly braces after **if**, if not, execute the statement in curly braces after the **else**.  
   If the state of the button is high, the LED pin outputs a high level and turn the LED  on, else turn LED off.
 
+- **Demo Effect and Serial Print Result:**
+
+Pressing the button will turn the LED module on.
+
 ### 2. Rotary Potentiometer
 
-- **Practice:** Turn the knob to control the frequency of LED flashing.
+Unlike buttons, the signals entered by Potentiometer are analog signals. Unlike digital signals, analog signals range in value from 0 to 1023. We can control the frequency of LED flashing based on this signal.
 
-Unlike buttons, the signals entered by Potentiometer are analog signals. Unlike digital signals, analog signals range in value from 0 to 1023. We can control the frequency of led flashing based on this signal.
-
-- **List of materials:**
+- **Components Required:**
   1. Seeeduino Lotus
   2. Grove LED
   3. Grove Rotary Switch
@@ -367,6 +401,10 @@ void loop() {
 
      Realize delay function, The millisecond duration of the delay is the value in parentheses. Because the value is the value of the analog signal of the knob pin being read, so the delay time can be controlled by the knob.
 
+- **Demo Effect and Serial Print Result:**
+
+Turning the Potentiometer will change the frequency of LED flickering.
+
 ## Section 3: Functional Sensors
 
 In the previous section, we have used buttons and rotary potentiometer as control modules, but there are still many sensors that have not been used, so let's take a look at each one.
@@ -377,7 +415,7 @@ The light sensor contains a photosensitive resistor to measure the intensity of 
 
 - **Exercise:** As the environment slowly brightens, the LED lights will lighten. As the light slowly dimmed, the LED dimmed. The LED will go from dark to light or from light to dark. To achieve this, we will use pulse width modulation(PWM).
   
-- **List of materials:**
+- **Components Required:**
   1. Seeeduino Lotus
   2. Grove LED
   3. Grove Light Sensor
@@ -408,16 +446,16 @@ The light sensor contains a photosensitive resistor to measure the intensity of 
    int outputValue = 0;        // value output to the PWM (analog out)
 
    void setup() {
-   pinMode(ledPin,OUTPUT);
+    pinMode(ledPin,OUTPUT);
    }
 
    void loop() {
-   // read the analog in value:
-   sensorValue = analogRead(sensorpin);
-   // map it to the range of the analog out:
-   outputValue = map(sensorValue, 0, 1023, 0, 255);
-   // change the analog out value:
-   analogWrite(ledPin, outputValue);
+    // read the analog in value:
+    sensorValue = analogRead(sensorpin);
+    // map it to the range of the analog out:
+    outputValue = map(sensorValue, 0, 1023, 0, 255);
+    // change the analog out value:
+    analogWrite(ledPin, outputValue);
    delay(30);
    }
    ```
@@ -438,13 +476,17 @@ The light sensor contains a photosensitive resistor to measure the intensity of 
   - **analogWrite(ledPin,outputvalue)**</br>
      The function is used to write an analog value between 0 - 255 a PWM pin. analogWrite() can only be used for PWM pins. The new mapping data in the previous statement can be output to ledPin to lighten / dim the LED.
 
+- **Demo Effect and Serial Print Result:**
+
+The LED module will change its intensity according to the light intensity of surrounding. The brighter the surrounding, the lighter it gets.
+
 ### 2. Sound Sensor
 
 The sound sensor can detect the sound intensity of the environment, and its output is also simulated. I'm sure you've all been exposed to the sound control lights, but now we can do one ourselves, and with the basics, this experiment will be easy for you.
 
 - **Practice:** The LED lights light up when the sound is made. When there is no sound and it is very quiet, the LED lights go off.
 
-- **List of materials:**
+- **Components Required:**
   1. Seeeduino Lotus
   2. Grove LED
   3. Grove Sound Sensor
@@ -496,12 +538,16 @@ The sound sensor can detect the sound intensity of the environment, and its outp
   - **Serial.println(soundState);**</br>
    Serial port print the sound sensor’s value.  So you open the **serial monitor** on the IED interface, and you see the value of the output sensor.
 
-### 3. Temperature and Humidity Sensor
+- **Demo Effect and Serial Print Result:**
+
+The LED module will light up if the surrounding is loud enough.
+
+### 3. Temperature and Humidity Sensor and OLED Display
 
 Have you ever wondered about the temperature and humidity of your surroundings? Want to know the exact number? Want to wear a skirt or coat today depending on the temperature?Let's make a temperature meter!
 
 - **Practice:** Let your OLED display display the current ambient temperature and humidity.
-- **List of materials:**
+- **Components Required:**
   1. Seeeduino Lotus
   2. Grove OLED
   3. Grove Temperature and Temperature Sensor
@@ -510,7 +556,7 @@ Have you ever wondered about the temperature and humidity of your surroundings? 
 - **Hardware connection:**
   - **Module connection:**
     1. Default connection by PCB stamp hole.
-    2. Use Grove cable to connect the OLED to Seeeduino Lotus's **I2C** interface (note: I2C's default address is 0x78). Connect the Grove Temperature and Humidity Sensor to Seeeduino Lotus's digital signal interface **D3**.
+    2. Use Grove cable to connect the OLED to Seeeduino Lotus's **I2C** interface (Note: I2C's default address is 0x78). Connect the Grove Temperature and Humidity Sensor to Seeeduino Lotus's digital signal interface **D3**.
   - The Seeeduino is then connected to the computer via a USB cable.
 
 - **Software code:**
@@ -619,7 +665,7 @@ This is the last sensor, the triaxial accelerometer, and with this module, you c
 
 - **Practice:** when motion is detected, the buzzer gives an alarm indicating that the object is in motion.
 
-- **List of materials:**
+- **Components Required:**
   1. Seeeduino Lotus
   2. Grove 3-axis Accelerometer
   3. Grove cable
@@ -698,7 +744,7 @@ This is the last sensor, the triaxial accelerometer, and with this module, you c
 
 - **Project description:** In this experiment, we will make the buzzer play pleasant music and the led lights flash according to the music frequency and beat.
 
-- **List of materials:**
+- **Components Required:**
   1. Seeeduino Lotus
   2. Grove LED
   3. Buzzer
@@ -840,7 +886,7 @@ delay(4000);
 
 - **Project description:** as the name implies, this project is to make a small lamp controlled by Sound and Light. We need to use LED module. Of course, Light Sensor and Sound Sensor are also indispensable. In this way, you can achieve the function of the smart desk lamp: when the sound, the lamp will light up;If the environment turns dark, the lamp will automatically turn brighter.
 
-- **list of materials:**
+- **Components Required:**
   1. Seeeduino Lotus
   2. Grove LED
   3. Light Sensor
