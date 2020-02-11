@@ -22,8 +22,7 @@ Grove Starter Kit for Arduino is one of the best Arduino Starter Kit for beginne
 
 The Grove Starter Kit has a plug and play unboxing demo, where you first plug in the power to the board, you get the chance to experience all the sensors in one go! Use the button and rotary potentiometer to experience each sensor demo!
 
-![](https://raw.githubusercontent.com/ansonhe97/rawimages/master/img/20200211115732.jpg
-)
+![](https://raw.githubusercontent.com/ansonhe97/rawimages/master/img/20200211115732.jpg)
 
 - **Scroll** -> Rotary Potentiometer
 - **Select** -> Short Press
