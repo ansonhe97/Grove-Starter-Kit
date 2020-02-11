@@ -18,9 +18,18 @@ Grove Starter Kit for Arduino is one of the best Arduino Starter Kit for beginne
 10. **[Grove - 3-Axis Accelerator](http://wiki.seeedstudio.com/Grove-3-Axis_Digital_Accelerometer-1.5g/):** Detects object acceleration
 11. **[Seeeduino Lotus](http://wiki.seeedstudio.com/Seeeduino_Lotus/):** Arduino Compatible Board with Grove Ports 
 
-### Unlock Your First Open Source Hardware
+### Plug and Play Unboxing Demo
 
-Connect your Board to Power, it becomes a Smart indoor environmental data sensing prototype!
+The Grove Starter Kit has a plug and play unboxing demo, where you first plug in the power to the board, you get the chance to experience all the sensors in one go! Use the button and rotary potentiometer to experience each sensor demo!
+
+![](https://raw.githubusercontent.com/ansonhe97/rawimages/master/img/20200211115732.jpg
+)
+
+- **Scroll** -> Rotary Potentiometer
+- **Select** -> Short Press
+- **Exit Current Demo** -> Long Press
+
+Buzzer and LED module are used for key prompt.
 
 !!!Note
         By default, Grove modules are connected to Seeeduino via PCB stamp holes. This means you don't need to use Grove cables to connect if not broken out. The default pins are as follow:
@@ -669,54 +678,43 @@ Have you ever wondered about the temperature and humidity of your surroundings? 
 
 ```Cpp
 //Temperature and Humidity Sensor
+//Temperature and Humidity Sensor
 #include "DHT.h"
 #include <Arduino.h>
-#include <U8g2lib.h>
-#include <SPI.h>
-#include <Wire.h>
+#include <U8x8lib.h>
 
-#ifdef U8X8_HAVE_HW_SPI
-#endif
-#ifdef U8X8_HAVE_HW_I2C
-#endif
-#define DHTPIN 3     // what pin we're connected to
+#define DHTPIN 4     // what pin we're connected to
 #define DHTTYPE DHT11   // DHT 11 
-
 DHT dht(DHTPIN, DHTTYPE);
 
-U8G2_SSD1306_128X64_NONAME_2_HW_I2C u8g2(U8G2_R0, /* reset=*/ U8X8_PIN_NONE);
+U8X8_SSD1306_128X64_ALT0_HW_I2C u8x8(/* reset=*/ U8X8_PIN_NONE);
 
 void setup(void) {
-
-Serial.begin(9600); 
-Serial.println("DHTxx test!");
-Wire.begin();
-
-dht.begin();
-u8g2.begin();  
+  Serial.begin(9600); 
+  Serial.println("DHTxx test!");
+  dht.begin();
+  u8x8.begin();
+  u8x8.setPowerSave(0);  
+  u8x8.setFlipMode(1);
 }
 
 void loop(void) {
 
-float temp_hum_val[2] = {0};
-dht.readTempAndHumidity(temp_hum_val);
-
-u8g2.firstPage();
-{
-
-u8g2.setFont(u8g2_font_ncenB08_tr);
-u8g2.setCursor(0,50);
-u8g2.print("Humidity:");
-u8g2.print(temp_hum_val[0]);
-u8g2.print("%");
-u8g2.setCursor(0, 33);
-u8g2.print("Temperature:");
-u8g2.print(temp_hum_val[1]);
-u8g2.print("*C");
-
-}
-while (u8g2.nextPage());
-delay(1000);  
+  float temp, humi;
+  temp = dht.readTemperature();
+  humi = dht.readHumidity();
+  
+  u8x8.setFont(u8x8_font_chroma48medium8_r);
+  u8x8.setCursor(0, 33);
+  u8x8.print("Temp:");
+  u8x8.print(temp);
+  u8x8.print("C");
+  u8x8.setCursor(0,50);
+  u8x8.print("Humidity:");
+  u8x8.print(humi);
+  u8x8.print("%");
+  u8x8.refreshDisplay();
+  delay(200);
 }
 ```
 
@@ -727,11 +725,6 @@ delay(1000);
 ```
 **#include** is an instruction that introduces a header file. Here we use the DHT.h, <Arduino.h>, <U8g2lib.h>, <SPI.h>, <Wire.h> library, these library are included in Arduino IDE. 
 
-```cpp
-#ifdef instruction
-```
-
-If the preprocessor has already defined the following identifier, execute all instructions and compile the C code until the next #else or #endif appears (regardless of who appears first).
 
 ```cpp
 #define
@@ -740,32 +733,23 @@ If the preprocessor has already defined the following identifier, execute all in
 Force a variable to be the value you want.
 
 ```cpp
-U8G2_SSD1306_128X64_NONAME_2_HW_I2C u8g2(U8G2_R0, /* reset=*/ U8X8_PIN_NONE);
+U8X8_SSD1306_128X64_ALT0_HW_I2C u8x8(/* reset=*/ U8X8_PIN_NONE);
 ```
 
 Once the object is declared, you can use functions from the library.
 
 ```cpp
-float temp_hum_val[2] = {0};
+float temp, humi;
 ```
 
-Defines an array of floating-point types. Floating point Numbers use exponents to allow the position of the decimal point to rise and fall as needed.  An array is a large number of combinations, of the same type, that are stored sequentially in memory.
+Defines variables to store readings.
 
 ```cpp
-dht.readTempAndHumidity(temp_hum_val);
+temp = dht.readTemperature();
+humi = dht.readHumidity();
 ```
 
-Call this function to read the temperature and humidity.
-
-```cpp
-u8g2.firstPage();
-```
-
-```cpp
-while (u8g2.nextPage());
-```
-
-Will change the current page position to 0. Modifying content is between firstPage and nextPage, rerendering everything each time.
+Call these functions to read the temperature and humidity and store them in defined variables.
 
 ```cpp
 u8g2.setCursor();
