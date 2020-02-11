@@ -18,18 +18,6 @@ Grove Starter Kit for Arduino is one of the best Arduino Starter Kit for beginne
 10. **[Grove - 3-Axis Accelerator](http://wiki.seeedstudio.com/Grove-3-Axis_Digital_Accelerometer-1.5g/):** Detects object acceleration
 11. **[Seeeduino Lotus](http://wiki.seeedstudio.com/Seeeduino_Lotus/):** Arduino Compatible Board with Grove Ports 
 
-### Plug and Play Unboxing Demo
-
-The Grove Starter Kit has a plug and play unboxing demo, where you first plug in the power to the board, you get the chance to experience all the sensors in one go! Use the button and rotary potentiometer to experience each sensor demo!
-
-![](https://raw.githubusercontent.com/ansonhe97/rawimages/master/img/20200211115732.jpg)
-
-- **Scroll** -> Rotary Potentiometer
-- **Select** -> Short Press
-- **Exit Current Demo** -> Long Press
-
-Buzzer and LED module are used for key prompt.
-
 !!!Note
         By default, Grove modules are connected to Seeeduino via PCB stamp holes. This means you don't need to use Grove cables to connect if not broken out. The default pins are as follow:
 
@@ -73,6 +61,18 @@ Buzzer and LED module are used for key prompt.
 - Basic Arduino Programming.
 - Communication principles and methods for sensors.
 - Hands-on implementation of Open Source Hardware projects.
+
+### Plug and Play Unboxing Demo
+
+The Grove Starter Kit has a plug and play unboxing demo, where you first plug in the power to the board, you get the chance to experience all the sensors in one go! Use the button and rotary potentiometer to experience each sensor demo!
+
+![](https://raw.githubusercontent.com/ansonhe97/rawimages/master/img/20200211115732.jpg)
+
+- **Scroll** -> Rotary Potentiometer
+- **Select** -> Short Press
+- **Exit Current Demo** -> Long Press
+
+Buzzer and LED module are used for key prompt.
 
 ## How to get started with Arduino
 
@@ -124,7 +124,7 @@ void loop() {
 
 ![](https://raw.githubusercontent.com/littletwany/PICTURE/master/img/print.png)
 
-## What are Arduino Libraries
+### What are Arduino Libraries
 
 The Arduino environment can be extended through the use of libraries, just like most other programming platforms. Libraries provide extra functionalities for use in sketches, i.e. working with specific hardware or manipulating data. To use a library in a sketch, select it from **Sketch** ->**Include Library**.
 
@@ -132,43 +132,8 @@ The Arduino environment can be extended through the use of libraries, just like 
 
 For more information, please also visit [How to install Arduino Libraries](http://wiki.seeedstudio.com/How_to_install_Arduino_Library/).
 
-## Building The First Open Source Control System
-
-### 1. The minimum composition of control system
-
-- Start with a simple example, the automatic door. When someone approaches it, the distance sensor senses it, sends a signal, the controller receives the signal, the signal is output to the actuator, the actuator then opens the door. So the control system is made up of three parts:
-
-  - **Inputs:** Obviously, Modules like Temperature and Humidity sensors, 3-Axis Accelerator, Barometer Sensor, Light sensor, and Sound sensors can all act as Inputs, transmitting the perceived temperature, humidity, acceleration, or light signal data to the controller.
-  
-  - **Control:** the controller, the microprocessor, is the development board module, according to the input signal to issue instructions, so that the actuator to make the corresponding actions and response.
-
-  - **Output:**  OLED Display, LED or buzzer can be used as an output module that converts electrical energy into sound, light or to OLED display screen. For example, it can display different patterns, which is its output.
-
-- How does the controller know to open the door when it receives input signal from the sensor? This involves the new concept of "Code"."Code" is the equivalent of "thought" in our brain. It can process the input signal so that the input system can communicate with the controller, and it can also process the output signal so that the controller can communicate with the output system.
-
-### 2. Analog, Digital and Protocol Signals
-
-We already know that the input system, the controller and the output system communicate by processing the input and output signals in code. The signals here are equivalent to the "nerve impulses" of the brain. They are divided into digital signals and analog signals.
-
-- **Analog signals:** Signals vary continuously in time and value, and the amplitude, frequency, or phase of the signal changes continuously at any time, such as the current broadcast sound signal, or image signal, etc.The analog signal has sine wave and triangle wave and so on.The analog pins of your microcontroller can have between 0V and 5V is mapped to a range between 0 and 1023 where 1023 is mapped as 5V and 512 is mapped as 2.5v and etc.
-
-  ![Alt text](https://raw.githubusercontent.com/littletwany/PICTURE/master/img/analog.png)
-
-- **Digital signal:** Digital signal refers to the value of the amplitude is discrete, the amplitude is limited to a finite number of values. In our controller, the digital signal has two states: LOW(0V) for 0; HIGH(5V) for 1.
-
-  ![Alt text](https://raw.githubusercontent.com/littletwany/PICTURE/master/img/digital.png)
-
-- **Protocol signal:** the protocol signal we use is I2C, so here is a brief introduction to I2C. I2C bus just need two wires in the transmission of information connection between the devices: the SDA (Serial Data Line) and SCL (Serial Clock line). These two lines are bidirectional I/O lines, the main component used to start the bus transfer data, and generate the clock to open transmission device, any devices that are addressing at this time is considered from the device. The relationship between master and slave, sender and receiver on the bus is not constant, but depends on the direction of data transmission. If the host wants to send data to the slave device, the host first addresses the slave device, then actively sends data to the slave device, and finally terminates the data transmission by the host.If the host is to receive data from the slave, the slave is first addressed by the master. The host then receives the data sent from the device, and the host terminates the receiving process. In this case.The host is responsible for generating the timing clock and terminating the data transfer.
-
-### 3. Seeeduino's interface distribution
-
-- Take a look at the Seeeduino development board in the middle of the suite. The Seeeduino has ports for **Analog, Digital, I2C and UART Signals**.
-
-- In addition, we have separate Grove Cables, and you can also use Grove Cables to connect modules to the corresponding interfaces on the Seeeduino development board.
-
-## Key Note
-
-All modules are pre-wired on a single circuit board, so no cables and soldering are needed. However, if you break  out the modules and want to connect them with Grove  cables, please kindly check Breakout Guide.
+!!!Note
+        All modules are pre-wired on a single circuit board, so no cables and soldering are needed. However, if you break  out the modules and want to connect them with Grove  cables, please kindly check Breakout Guide.
 
 ## Section 1: Output Control
 
@@ -259,6 +224,12 @@ The LED module will be 1 second on and 1 second off.
 
 If modules are broken out from the board. Use a Grove cable to connect the **Grove LED** to Seeeduino Lotus's digital interface **D4**.  
 
+#### What is Digital Signal
+
+- **Digital signal:** Digital signal refers to the value of the amplitude is discrete, the amplitude is limited to a finite number of values. In our controller, the digital signal has two states: LOW(0V) for 0; HIGH(5V) for 1. So sending a HIGH signal to LED can light it up.
+
+![Alt text](https://raw.githubusercontent.com/littletwany/PICTURE/master/img/digital.png)
+
 ### 2. Buzzer
 
 Just like the LED module, Buzzer is also an output module, instead of lighting up it produces a beep noise. This can be used for many  situations for indication purposes.
@@ -303,11 +274,6 @@ void beep(unsigned char delaytime){
 
 - **Software Analysis:**
 
-  - **PWM(Pulse Width Modulation)**
-
-    - Pulse Width Modulation, or PWM, is a technique for getting analog results with digital means. Digital control is used to create a square wave, a signal switched between on and off. This on-off pattern can simulate voltages in between full on (5 Volts) and off (0 Volts) by changing the portion of the time the signal spends on versus the time that the signal spends off.
-    - There are six digital pins on your Seeeduino that are marked with the symbol “~”, which means they can send out a PWM signal : 3,5,6,9,10,11. They are celled PWM pins.
-
 ```cpp
 analogWrite(BuzzerPin,50);
 ```
@@ -322,6 +288,14 @@ The buzzer beeps 3 times fast at startup, waits a second then beeps continuously
 - **Breakout Guide**
 
 Use a Grove cable to connect the Grove Buzzer to Seeeduino Lotus's digital interface **D5**.  
+
+#### What is PWM
+
+- Pulse Width Modulation, or PWM, is a technique for getting analog results with digital means. Digital control is used to create a square wave, a signal switched between on and off. This on-off pattern can simulate voltages in between full on (5 Volts) and off (0 Volts) by changing the portion of the time the signal spends on versus the time that the signal spends off. The duration of "on time" is called the pulse width. To get varying analog values, you change, or modulate, that pulse width. If you repeat this on-off pattern fast enough with an LED for example, the result is as if the signal is a steady voltage between 0 and 5v controlling the brightness of the LED. *Reference: [Arduino](https://www.arduino.cc/en/tutorial/PWM)*
+
+<div align=center><img src="https://raw.githubusercontent.com/ansonhe97/rawimages/master/img/20200211150721.png"/></div>
+
+- There are six digital pins on your Seeeduino that are marked with the symbol “~”, which means they can send out a PWM signal : 3,5,6,9,10,11. They are celled PWM pins.
 
 ## Section 2: Input Control
 
@@ -500,6 +474,12 @@ Turning the Potentiometer will change the frequency of LED flickering.
 
 Use a Grove cable to connect LED to Seeeduino Lotus's digital interface **D4**, and a Grove cable to connect the Grove Rotary Switch to analog signal interface **A0**.
 
+#### What is Analog Signal
+
+- **Analog signals:** Signals vary continuously in time and value, and the amplitude, frequency, or phase of the signal changes continuously at any time, such as the current broadcast sound signal, or image signal, etc.The analog signal has sine wave and triangle wave and so on.The analog pins of your microcontroller can have between 0V and 5V is mapped to a range between 0 and 1023 where 1023 is mapped as 5V and 512 is mapped as 2.5v and etc.
+
+![Alt text](https://raw.githubusercontent.com/littletwany/PICTURE/master/img/analog.png)
+
 ## Section 3: Functional Sensors
 
 In the previous section, we have used buttons and rotary potentiometer as control modules, but there are still many sensors that have not been used, so let's take a look at each one.
@@ -653,6 +633,12 @@ The LED module will light up if the surrounding is loud enough.
 
 Use Grove cables to connect the Grove LED to Seeeduino Lotus's digital signal interface **D4**, Connect the Grove Sound Sensor to Seeeduino Lotus's analog signal interface **A2**.
 
+#### What is Serial Monitor
+
+Serial Monitor is a useful tool to observe results on Arduino, it can be very useful in terms of printing results from the sensors or debugging in general. You can also send data back to the controller via serial monitor to do certain tasks! Note: Make sure the Serial data transfer match with the code. 
+
+![](https://raw.githubusercontent.com/ansonhe97/rawimages/master/img/20200211150116.jpg)
+
 ### 3. Temperature and Humidity Sensor and OLED Display
 
 Have you ever wondered about the temperature and humidity of your surroundings? Want to know the exact number? Want to wear a skirt or coat today depending on the temperature?Let's make a temperature meter!
@@ -775,6 +761,11 @@ The surrounding temperature and humidity appears on the OLED screen.
 - **Breakout Guide**
 
 Use Grove cable to connect the OLED to Seeeduino Lotus's **I2C** interface (Note: I2C's default address is 0x78). Connect the Grove Temperature and Humidity Sensor to Seeeduino Lotus's digital signal interface **D3**.
+
+#### What is Protocol Signal (I2C)
+
+- **Protocol signal:** the protocol signal we use is I2C, so here is a brief introduction to I2C. I2C bus just need two wires in the transmission of information connection between the devices: the SDA (Serial Data Line) and SCL (Serial Clock line). These two lines are bidirectional I/O lines, the main component used to start the bus transfer data, and generate the clock to open transmission device, any devices that are addressing at this time is considered from the device. The relationship between master and slave, sender and receiver on the bus is not constant, but depends on the direction of data transmission. If the host wants to send data to the slave device, the host first addresses the slave device, then actively sends data to the slave device, and finally terminates the data transmission by the host.If the host is to receive data from the slave, the slave is first addressed by the master. The host then receives the data sent from the device, and the host terminates the receiving process. In this case.The host is responsible for generating the timing clock and terminating the data transfer.
+
 
 ### 4. Barometer
 
