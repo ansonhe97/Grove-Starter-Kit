@@ -293,7 +293,9 @@ Use a Grove cable to connect the Grove Buzzer to Seeeduino Lotus's digital inter
 
 - Pulse Width Modulation, or PWM, is a technique for getting analog results with digital means. Digital control is used to create a square wave, a signal switched between on and off. This on-off pattern can simulate voltages in between full on (5 Volts) and off (0 Volts) by changing the portion of the time the signal spends on versus the time that the signal spends off. The duration of "on time" is called the pulse width. To get varying analog values, you change, or modulate, that pulse width. If you repeat this on-off pattern fast enough with an LED for example, the result is as if the signal is a steady voltage between 0 and 5v controlling the brightness of the LED. *Reference: [Arduino](https://www.arduino.cc/en/tutorial/PWM)*
 
-<div align=center><img src="https://raw.githubusercontent.com/ansonhe97/rawimages/master/img/20200211150721.png"/></div>
+- As the diagram indicates below, use `analogWrite()` to generate PWM waves, the higher the percentage of Duty Cycle, the louder the buzzer.
+
+<div align=center><img src="https://raw.githubusercontent.com/ansonhe97/rawimages/master/img/20200211170133.jpg"/></div>
 
 - There are six digital pins on your Seeeduino that are marked with the symbol “~”, which means they can send out a PWM signal : 3,5,6,9,10,11. They are celled PWM pins.
 
