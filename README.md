@@ -333,7 +333,7 @@ Use a Grove cable to connect the Grove LED to Seeeduino Lotus's digital interfac
 
 ### 3. Rotary Potentiometer
 
-Unlike buttons, the signals entered by Potentiometer are analog signals. Unlike digital signals, analog signals range in value from 0 to 1023. We can control the frequency of LED flashing based on this signal.
+In the last section, we studied that button only has two states, ON/OFF state corresponding 0V and 5V, but in practice, we often counter the need for many states, not just 0V and 5V. Then you need to use Analog Signal! Rotary Potentiometer is a classic example that uses analog signal.
 
 #### Background Information
 
@@ -415,7 +415,7 @@ Use a Grove cable to connect LED to Seeeduino Lotus's digital interface **D4**, 
 
 ### 4. Buzzer
 
-Just like the LED module, Buzzer is also an output module, instead of lighting up it produces a beep noise. This can be used for many  situations for indication purposes.
+Just like the LED module, Buzzer is also an output module, instead of lighting up it produces a beep sound. This can be used for many situations for indication purposes.  We studied the use of potentiometer in the last section, so how do we use the potentiometer to control the volume of the buzzer? This requires the used of PWM control!
 
 #### Background Information
 
@@ -480,11 +480,13 @@ Use a Grove cable to connect the Grove Buzzer to Seeeduino Lotus's digital inter
 
 The light sensor contains a photosensitive resistor to measure the intensity of light. The resistance of the photosensitive resistor decreases with the increase of light intensity. The output signal is the analog value, the brighter the light source, the larger the analog value. Based on this property, you can use it to make a light switch.
 
+In the following sections, we will use Serial Monitor to observe results from our sensors so here comes the brief introduction!
+
 #### Background Information
 
 - **What is Serial Monitor**
 
-Serial Monitor is a useful tool to observe results on Arduino, it can be very useful in terms of printing results from the sensors or debugging in general. You can also send data back to the controller via serial monitor to do certain tasks! Note: Make sure the Serial data transfer match with the code. 
+Serial Monitor is a useful tool to observe results on Arduino, it can be very useful in terms of printing results from the sensors or debugging in general. You can also send data back to the controller via serial monitor to do certain tasks! Note: Make sure the Serial data transfer match with the code.
 
 ![](https://raw.githubusercontent.com/ansonhe97/rawimages/master/img/20200211150116.jpg)
 
@@ -574,7 +576,7 @@ Use Grove Cable to connect the Grove LED to Seeeduino Lotus's digital signal int
 
 ### 6. Sound Sensor
 
-The sound sensor can detect the sound intensity of the environment, and its output is also simulated. I'm sure you've all been exposed to the sound control lights, but now we can do one ourselves, and with the basics, this experiment will be easy for you.
+The sound sensor can detect the sound intensity of the environment, and its output is also simulated. I'm sure you've all been exposed to the sound control lights, but now we can do one ourselves, and with the basics, this experiment will be easy for you. Here used Serial Plotter to visualize results.
 
 #### Background Information
 
