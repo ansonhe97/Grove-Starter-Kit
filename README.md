@@ -6,6 +6,8 @@ Grove Starter Kit for Arduino is one of the best Arduino Starter Kit for beginne
 
 ![](https://raw.githubusercontent.com/ansonhe97/rawimages/master/img/20200206211934.png)
 
+**Note:** Dimensions - 17.69 * 1.64 * 1.88cm
+
 1. **[Grove - LED](http://wiki.seeedstudio.com/Grove-Red_LED/):** Simple LED module
 2. **[Grove - Buzzer](http://wiki.seeedstudio.com/Grove-Buzzer/):** Piezo Buzzer
 3. **[Grove - OLED Display 0.96"](http://wiki.seeedstudio.com/Grove-OLED_Display_0.96inch/):** 128×64 dot resolution High brightness,self-emission and high contrast ratio Big screen on a compact design Low power consumption.
