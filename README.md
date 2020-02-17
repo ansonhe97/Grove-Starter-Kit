@@ -126,14 +126,6 @@ void loop() {
 
 ![](https://raw.githubusercontent.com/littletwany/PICTURE/master/img/print.png)
 
-### What are Arduino Libraries
-
-The Arduino environment can be extended through the use of libraries, just like most other programming platforms. Libraries provide extra functionalities for use in sketches, i.e. working with specific hardware or manipulating data. To use a library in a sketch, select it from **Sketch** ->**Include Library**.
-
-![](https://raw.githubusercontent.com/ansonhe97/rawimages/master/img/20200210120746.jpg)
-
-For more information, please also visit [How to install Arduino Libraries](http://wiki.seeedstudio.com/How_to_install_Arduino_Library/).
-
 !!!Note
         All modules are pre-wired on a single circuit board, so no cables and soldering are needed. However, if you break  out the modules and want to connect them with Grove  cables, please kindly check Breakout Guide.
 
@@ -492,6 +484,10 @@ Serial Monitor is a useful tool to observe results on Arduino, it can be very us
 
 ![](https://raw.githubusercontent.com/ansonhe97/rawimages/master/img/20200211150116.jpg)
 
+You can open the Serial Plotter by clicking **Tools** -> **Serial Monitor**.
+
+![](https://raw.githubusercontent.com/ansonhe97/rawimages/master/img/20200217144001.jpg)
+
 - **Exercise:** As the environment slowly brightens, the LED lights will lighten. As the light slowly dimmed, the LED dimmed. The LED will go from dark to light or from light to dark. To achieve this, we will use pulse width modulation(PWM).
   
 - **Components Involved:**
@@ -588,6 +584,10 @@ Serial Plotter is similar to Serial Monitor, allowing you to natively graph seri
 
 ![](https://raw.githubusercontent.com/ansonhe97/rawimages/master/img/20200212105028.png)
 
+You can open the Serial Plotter by clicking **Tools** -> **Serial Plotter**.
+
+![](https://raw.githubusercontent.com/ansonhe97/rawimages/master/img/20200217143635.jpg)
+
 - **Practice:** The LED lights light up when the sound is made. When there is no sound and it is very quiet, the LED lights go off.
 
 - **Components Involved:**
@@ -664,6 +664,18 @@ The LED module will light up if the surrounding is loud enough.
 Use Grove cables to connect the Grove LED to Seeeduino Lotus's digital signal interface **D4**, Connect the Grove Sound Sensor to Seeeduino Lotus's analog signal interface **A2**.
 
 ### 7. OLED Display
+
+OLED Display can be used for many situations, where you could use it to visualize sensor readings!
+
+#### Background Information
+
+- **What are Arduino Libraries**
+
+The Arduino environment can be extended through the use of libraries, just like most other programming platforms. Libraries provide extra functionalities for use in sketches, i.e. working with specific hardware or manipulating data. To use a library in a sketch, select it from **Sketch** ->**Include Library**.
+
+![](https://raw.githubusercontent.com/ansonhe97/rawimages/master/img/20200210120746.jpg)
+
+For more information, please also visit [How to install Arduino Libraries](http://wiki.seeedstudio.com/How_to_install_Arduino_Library/).
 
 - **Components Involved:**
   1. Seeeduino Lotus
