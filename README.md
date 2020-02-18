@@ -4,9 +4,9 @@ Grove Starter Kit for Arduino is one of the best Arduino Starter Kit for beginne
 
 ## Hardware Overview
 
-![](https://raw.githubusercontent.com/ansonhe97/rawimages/master/img/20200206211934.png)
+![](https://raw.githubusercontent.com/ansonhe97/rawimages/master/img/20200218160437.jpg)
 
-**Note:** Dimensions - 17.69 * 1.64 * 1.88cm
+**Note:** Dimensions - 17.69 * 11.64 * 1.88cm
 
 1. **[Grove - LED](http://wiki.seeedstudio.com/Grove-Red_LED/):** Simple LED module
 2. **[Grove - Buzzer](http://wiki.seeedstudio.com/Grove-Buzzer/):** Piezo Buzzer
@@ -16,7 +16,7 @@ Grove Starter Kit for Arduino is one of the best Arduino Starter Kit for beginne
 6. **[Grove - Light](http://wiki.seeedstudio.com/Grove-Light_Sensor/):** Detects surrounding light intensity
 7. **[Grove - Sound](http://wiki.seeedstudio.com/Grove-Sound_Sensor/):** Detects surrounding sound intensity
 8. **[Grove - Temperature & Humidity Sensor](http://wiki.seeedstudio.com/Grove-TemperatureAndHumidity_Sensor/):** Detects surrounding temperature and humidity values
-9. **[Grove - Barometer Sensor](http://wiki.seeedstudio.com/Grove-Barometer_Sensor-BMP280/):** Detects surrounding atmospheric pressure
+9. **[Grove - Air Pressure Sensor](http://wiki.seeedstudio.com/Grove-Barometer_Sensor-BMP280/):** Detects surrounding atmospheric pressure
 10. **[Grove - 3-Axis Accelerator](http://wiki.seeedstudio.com/Grove-3-Axis_Digital_Accelerometer-1.5g/):** Detects object acceleration
 11. **[Seeeduino Lotus](http://wiki.seeedstudio.com/Seeeduino_Lotus/):** Arduino Compatible Board with Grove Ports 
 
@@ -30,11 +30,11 @@ Grove Starter Kit for Arduino is one of the best Arduino Starter Kit for beginne
 |OLED Display 0.96"|I2C|I2C, 0x78(default)|
 |Button|Digital|D6|
 |Rotary Potentiometer|Analog|A0|
-|Light|Analog|A1|
+|Light|Analog|A6|
 |Sound|Analog|A2|
 |Temperature & Humidity Sensor|Digital|D3|
-|Barometer Sensor|I2C|I2C, 0x76(default)/0x77(optional)|
-|3-Axis Accelerator|I2C|I2C, 0x4c(default)|
+|Air Pressure Sensor|I2C|I2C, 0x77(default) / 0x76(optional)|
+|3-Axis Accelerator|I2C|I2C, 0x63(default)|
 
 ## Part List
 
@@ -43,7 +43,7 @@ Grove Starter Kit for Arduino is one of the best Arduino Starter Kit for beginne
 |**Sensors**||
 |Temperature & Humidity Sensors|x1|
 |3-Axis Accelerometers|x1|
-|Barometer|x1|
+|Air Pressure|x1|
 |Light Sensor|x1|
 |Sound Sensor|x1|
 |**Input Modules**||
@@ -143,11 +143,12 @@ We have completed the output "Hello world" program. Now let's learn how to light
 
 ![Alt text](https://raw.githubusercontent.com/littletwany/PICTURE/master/img/digital.png)
 
-
 - **Components Involved:**
   1. Seeeduino Lotus
   2. Grove LED
   3. Grove Cable(If Broken out)
+
+![](https://raw.githubusercontent.com/ansonhe97/rawimages/master/img/20200218174317.png)
 
 - **Hardware connection:**
   - **Module connection**
@@ -238,6 +239,8 @@ The first thing we need to know is that the input of the button is a digital sig
     2. Grove LED
     3. Grove Button
     4. Grove Cables(If broken out)
+
+![](https://raw.githubusercontent.com/ansonhe97/rawimages/master/img/20200218174437.png)
 
 - **Hardware connection:**
   - **Module connection:**
@@ -343,6 +346,8 @@ In the last section, we studied that button only has two states, ON/OFF state co
   3. Grove Rotary Switch
   4. Grove Cables(If broken out)
 
+![](https://raw.githubusercontent.com/ansonhe97/rawimages/master/img/20200218174521.png)
+
 - **Hardware connection:**
   - **Module connection:**
     - Default connection by PCB stamp hole.
@@ -428,6 +433,8 @@ There are six digital pins on your Seeeduino that are marked with the symbol “
   2. Grove Buzzer
   3. Grove Cable(If Broken out)
 
+![](https://raw.githubusercontent.com/ansonhe97/rawimages/master/img/20200218174543.png)
+
 - **Hardware connection:**
   - **Module connection**
     - Default connection by PCB stamp hole.
@@ -496,6 +503,8 @@ You can open the Serial Plotter by clicking **Tools** -> **Serial Monitor**.
   3. Grove Light Sensor
   4. Grove Cable(If broken out)
 
+![](https://raw.githubusercontent.com/ansonhe97/rawimages/master/img/20200218174604.png)
+
 - **Hardware connection:**
   - **Module connection:**
     - Default connection by PCB stamp hole.
@@ -513,7 +522,7 @@ You can open the Serial Plotter by clicking **Tools** -> **Serial Monitor**.
 
 ```Cpp
 // Light Switch
-int sensorpin = A1; // Analog input pin that the sensor is attached to
+int sensorpin = A6; // Analog input pin that the sensor is attached to
 int ledPin = 4;    // LED port
 int sensorValue = 0;        // value read from the port
 int outputValue = 0;        // value output to the PWM (analog out)
@@ -595,6 +604,8 @@ You can open the Serial Plotter by clicking **Tools** -> **Serial Plotter**.
   2. Grove LED
   3. Grove Sound Sensor
   4. Grove cable(If broken out)
+
+![](https://raw.githubusercontent.com/ansonhe97/rawimages/master/img/20200218174633.png)
 
 - **Hardware connection:**
   - **Module connection:**
@@ -681,6 +692,8 @@ For more information, please also visit [How to install Arduino Libraries](http:
   1. Seeeduino Lotus
   2. Grove OLED
   3. Grove cable(If broken out)
+
+![](https://raw.githubusercontent.com/ansonhe97/rawimages/master/img/20200218174720.png)
 
 - **Hardware connection:**
   - **Module connection:**
@@ -785,6 +798,8 @@ Have you ever wondered about the temperature and humidity of your surroundings? 
   3. Grove Temperature and Temperature Sensor
   4. Grove cable(If broken out)
 
+![](https://raw.githubusercontent.com/ansonhe97/rawimages/master/img/20200218174754.png)
+
 - **Hardware connection:**
   - **Module connection:**
     - Default connection by PCB stamp hole.
@@ -792,7 +807,7 @@ Have you ever wondered about the temperature and humidity of your surroundings? 
 
 - **Software code:**
   - Open Arduino IDE.
-  - Download the  [Seeed DHT library](https://github.com/Seeed-StudioGrove_Temperature_And_Humidity_Sensor)  from Github. Clink on **Sketch** > **Include library** > **Add .ZIP library**, import the library into the IDE.
+  - Install the **Grove Temperature and Humidity Sensor(DHT11) library**: Navigate to **Sketch** -> **Include Library** -> **Manage Libraries...** and Search for the keyword "**Grove Temperature and Humidity Sensor(DHT11)**" in the **Library Manager**, then install.
   - Copy the following code, click Verify to check for syntax errors.Verify that there are no errors, and you can upload the code.
 
 ```Cpp
@@ -860,20 +875,16 @@ The surrounding temperature and humidity appears on the OLED screen.
 
 Use Grove cable to connect the OLED to Seeeduino Lotus's **I2C** interface (Note: I2C's default address is 0x78). Connect the Grove Temperature and Humidity Sensor to Seeeduino Lotus's digital signal interface **D3**.
 
-### 9. Barometer
+### 9. Air Pressure Sensor
 
-tmp
-
-### 10. 3-Axis Accelerometer
-
-This is the last sensor, the triaxial accelerometer, and with this module, you can easily add motion monitoring to your design. So we can do a lot of interesting little experiments on the basis of motion.
-
-- **Practice:** when motion is detected, the buzzer gives an alarm indicating that the object is in motion.
+Grove Air Pressure Sensor(BMP280) is a breakout board for Bosch BMP280 high-precision and low-power digital barometer. This module can be used to measure temperature and atmospheric pressure accurately. As the atmospheric pressure changes with altitude, it can also measure approximate altitude of a place.
 
 - **Components Involved:**
   1. Seeeduino Lotus
-  2. Grove 3-axis Accelerometer
-  3. Grove cable
+  2. Grove Air Pressure Sensor
+  3. Grove cable(if broken out)
+
+![](https://raw.githubusercontent.com/ansonhe97/rawimages/master/img/20200218174824.png)
 
 - **Hardware connection:**
   - **Module connection:**
@@ -882,45 +893,46 @@ This is the last sensor, the triaxial accelerometer, and with this module, you c
 
 - **Software code:**
   - Open Arduino IDE.
-  - Download the [3-Axis Digital Accelerometer(±1.5g)](https://github.com/Seeed-Studio/Accelerometer_MMA7660)  from Github. Click on **Sketch** > **Include library** > **Add .ZIP library**, import the library into the IED.
+  - Install the **Grove Barometer Sensor library**: Navigate to **Sketch** -> **Include Library** -> **Manage Libraries...** and Search for the keyword "**Grove BMP280**" in the **Library Manager**, then install.
   - Copy the following code, click Verify to check for syntax errors.Verify that there are no errors, and you can upload the code.
   - In this program, acceleration information are sent from the sensor to Seeeduino via I2C bus and then Seeeduino printed them onto the serial monitor. Open the **serial monitor** to check the result.
 
 ```Cpp
-//Gravity Acceleration
+//Air pressure detection
+#include "Seeed_BMP280.h"
 #include <Wire.h>
-#include "MMA7660.h"
-MMA7660 accelemeter;
-void setup()
-{
-  accelemeter.init();  
-  Serial.begin(9600);
+
+BMP280 bmp280;
+
+void setup() {
+    Serial.begin(9600);
+    if (!bmp280.init()) {
+        Serial.println("Device not connected or broken!");
+    }
 }
-void loop()
-{
-  int8_t x;
-  int8_t y;
-  int8_t z;
-  float ax,ay,az;
-  accelemeter.getXYZ(&x,&y,&z);
 
-  Serial.print("x = ");
-  Serial.println(x); 
-  Serial.print("y = ");
-  Serial.println(y);   
-  Serial.print("z = ");
-  Serial.println(z);
+void loop() {
 
-  accelemeter.getAcceleration(&ax,&ay,&az);
-  Serial.println("accleration of X/Y/Z: ");
-  Serial.print(ax);
-  Serial.println(" g");
-  Serial.print(ay);
-  Serial.println(" g");
-  Serial.print(az);
-  Serial.println(" g");
-  Serial.println("*************");
-  delay(1000);
+    float pressure;
+
+    //get and print temperatures
+    Serial.print("Temp: ");
+    Serial.print(bmp280.getTemperature());
+    Serial.println("C"); // The unit for  Celsius because original arduino don't support speical symbols
+
+    //get and print atmospheric pressure data
+    Serial.print("Pressure: ");
+    Serial.print(pressure = bmp280.getPressure());
+    Serial.println("Pa");
+
+    //get and print altitude data
+    Serial.print("Altitude: ");
+    Serial.print(bmp280.calcAltitude(pressure));
+    Serial.println("m");
+
+    Serial.println("\n");//add a line between output of different times.
+
+    delay(1000);
 }
 ```
 
@@ -933,28 +945,145 @@ void loop()
 **#include** is an instruction that introduces a header file. Here we use the <Wire.h> library, this library is included in Arduino IDE. 
 
 ```cpp
-#include "MMA7660.h"
+#include "Seeed_BMP280.h"
 ```
 
-Represents the MMA766O.h header file that introduces the current path.
+Represents the Seeed_BMP280.h header file that introduces the current path.
 
 ```cpp
-MMA7660 accelemeter;
+if (!bmp280.init()) {
+    Serial.println("Device not connected or broken!");
+}
 ```
 
-  Once the object is declared, you can use functions from the library.
+if the Air pressure sensor did not start properly, then prints out error to serial monitor.
 
 ```cpp
-accelemeter.getXYZ(&x,&y,&z);
+Serial.print(bmp280.getTemperature());
 ```
 
-It is a function from the library, call this function, and you get the raw data of x,y and z.
+Prints the the temperature data to serial monitor.
 
 ```cpp
-accelemeter.getAcceleration(&ax,&ay,&az);
+Serial.print(pressure = bmp280.getPressure());
 ```
 
-By calling this function, you get the triaxial acceleration information converted to the unit gravity "g".
+Prints the current air pressure.
+
+```cpp
+Serial.print(bmp280.calcAltitude(pressure));
+```
+
+Prints the amplitude.
+
+- **Demo Effect and Serial Print Result:**
+
+The Air pressure readings are display on the Serial Monitor.
+
+- **Breakout Guide**
+
+Use Grove cable to connect Grove 3-axis Accelerometer to Seeeduino Lotus's **I2C** interface using a Grove cable (note: I2C default address is 0x77 or 0x76).
+
+
+### 10. 3-Axis Accelerometer
+
+This is the last sensor, the triaxial accelerometer, and with this module, you can easily add motion monitoring to your design. So we can do a lot of interesting little experiments on the basis of motion.
+
+- **Practice:** when motion is detected, the buzzer gives an alarm indicating that the object is in motion.
+
+- **Components Involved:**
+  1. Seeeduino Lotus
+  2. Grove 3-axis Accelerometer
+  3. Grove cable(if broken out)
+
+![](https://raw.githubusercontent.com/ansonhe97/rawimages/master/img/20200218174853.png)
+
+- **Hardware connection:**
+  - **Module connection:**
+    - Default connection by PCB stamp hole.
+  - The Seeeduino is then connected to the computer via a USB cable.
+
+- **Software code:**
+  - Open Arduino IDE.
+  - Download the [3-Axis Digital Accelerometer( ±2g to 16g)](https://github.com/Seeed-Studio/Seeed_Arduino_LIS3DHTR)  from Github. Click on **Sketch** > **Include library** > **Add .ZIP library**, import the library into the IED.
+  - Copy the following code, click Verify to check for syntax errors.Verify that there are no errors, and you can upload the code.
+  - In this program, acceleration information are sent from the sensor to Seeeduino via I2C bus and then Seeeduino printed them onto the serial monitor. Open the **serial monitor** to check the result.
+
+```Cpp
+//Gravity Acceleration
+#include "LIS3DHTR.h"
+#ifdef SOFTWAREWIRE
+    #include <SoftwareWire.h>
+    SoftwareWire myWire(3, 2);
+    LIS3DHTR<SoftwareWire> LIS(I2C_MODE);//IIC
+    #define WIRE myWire
+#else
+    #include <Wire.h>
+    LIS3DHTR<TwoWire> LIS(I2C_MODE);//IIC
+    #define WIRE Wire
+#endif
+
+
+void setup() {
+    Serial.begin(115200);
+    while (!Serial) {};
+    LIS.begin(WIRE); //IIC init
+    delay(100);
+    LIS.setOutputDataRate(LIS3DHTR_DATARATE_50HZ);
+}
+void loop() {
+    if (!LIS) {
+        Serial.println("LIS3DHTR didn't connect.");
+        while (1);
+        return;
+    }
+    //3 axis
+    Serial.print("x:"); Serial.print(LIS.getAccelerationX()); Serial.print("  ");
+    Serial.print("y:"); Serial.print(LIS.getAccelerationY()); Serial.print("  ");
+    Serial.print("z:"); Serial.println(LIS.getAccelerationZ());
+
+    delay(500);
+}
+```
+
+- **Code analysis:**
+
+```cpp
+#include "LIS3DHTR.h"
+#ifdef SOFTWAREWIRE
+    #include <SoftwareWire.h>
+    SoftwareWire myWire(3, 2);
+    LIS3DHTR<SoftwareWire> LIS(I2C_MODE);//IIC
+    #define WIRE myWire
+#else
+    #include <Wire.h>
+    LIS3DHTR<TwoWire> LIS(I2C_MODE);//IIC
+    #define WIRE Wire
+#endif
+```
+
+Initializing the module using software I2C or hardware I2C.
+
+```cpp
+while (!Serial) {};
+```
+
+Code stops here if don't open the serial monitor, so open serial monitor.
+
+```cpp
+LIS.begin(WIRE);
+LIS.setOutputDataRate(LIS3DHTR_DATARATE_50HZ);
+```
+
+Initialize the accelerator and set the output rate to 50Hz.
+
+```cpp
+Serial.print("x:"); Serial.print(LIS.getAccelerationX()); Serial.print("  ");
+Serial.print("y:"); Serial.print(LIS.getAccelerationY()); Serial.print("  ");
+Serial.print("z:"); Serial.println(LIS.getAccelerationZ());
+```
+
+Prints the 3 axis data to serial monitor.
 
 - **Demo Effect and Serial Print Result:**
 
@@ -975,6 +1104,8 @@ Use Grove cable to connect Grove 3-axis Accelerometer to Seeeduino Lotus's **I2C
   2. Grove LED
   3. Buzzer
   4. Grove Cables(if broken out)
+
+![](https://raw.githubusercontent.com/ansonhe97/rawimages/master/img/20200218174938.png)
 
 - **Hardware connection:**
   - **Module connection:**
@@ -1139,6 +1270,8 @@ Connect Grove LED to Seeeduino Lotus's digital signal interface **D4**, connect 
   3. Light Sensor
   4. Sound Sensor
   5. Grove cable(If broken out)
+
+![](https://raw.githubusercontent.com/ansonhe97/rawimages/master/img/20200218175138.png)
 
 - **Hardware connection:**
   - **Module connection:**
