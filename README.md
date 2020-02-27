@@ -194,11 +194,17 @@ After creating a `setup()` function, which initializes and sets the initial valu
 int ledPin = 4;
 ```
 
-**Description:** Converts a value to the int data type.
+**Description:**
 
-**Syntax:** int(x) or (int)x (C-style type conversion)
+Converts a value to the int data type.
 
-**Parameters:** x: a value. Allowed data types: any type.
+**Syntax:**
+
+int(**x**) or (int)**x** (C-style type conversion)
+
+**Parameters:**
+
+**x**: a value. Allowed data types: any type.
 
 Assigned an `int` type 4 to variable named ledPin.
 
@@ -206,13 +212,21 @@ Assigned an `int` type 4 to variable named ledPin.
 pinMode(ledPin, OUTPUT);
 ```
 
-**Description:** Configures the specified pin to behave either as an input or an output. See the Digital Pins page for details on the functionality of the pins.
+**Description:**
+
+Configures the specified pin to behave either as an input or an output. See the Digital Pins page for details on the functionality of the pins.
 
 As of Arduino 1.0.1, it is possible to enable the internal pullup resistors with the mode `INPUT_PULLUP`. Additionally, the `INPUT` mode explicitly disables the internal pullups.
 
-**Syntax:** pinMode(pin, mode)
+**Syntax:**
 
-**Parameters:** `pin`: the Arduino pin number to set the mode of. `mode`: `INPUT`, `OUTPUT`, or `INPUT_PULLUP`.()_()
+pinMode(**pin, mode**)
+
+**Parameters:**
+
+**pin**: the Arduino pin number to set the mode of.
+
+**mode**: `INPUT`, `OUTPUT`, or `INPUT_PULLUP`.
 
 Setting ledPin to the output mode.
 
@@ -220,7 +234,9 @@ Setting ledPin to the output mode.
 digitalWrite(ledPin, HIGH);
 ```
 
-**Description:** Write a `HIGH` or a `LOW` value to a digital pin.
+**Description:**
+
+Write a `HIGH` or a `LOW` value to a digital pin.
 
 If the pin has been configured as an OUTPUT with pinMode(), its voltage will be set to the corresponding value: 5V (or 3.3V on 3.3V boards) for `HIGH`, 0V (ground) for `LOW`.
 
@@ -228,9 +244,15 @@ If the pin is configured as an INPUT, digitalWrite() will enable (HIGH) or disab
 
 If you do not set the pinMode() to OUTPUT, and connect an LED to a pin, when calling digitalWrite(HIGH), the LED may appear dim. Without explicitly setting pinMode(), digitalWrite() will have enabled the internal pull-up resistor, which acts like a large current-limiting resistor.
 
-**Syntax:** digitalWrite(pin, value)
+**Syntax:**
 
-**Parameters** `pin`: the Arduino pin number. `value`: `HIGH` or `LOW`.
+digitalWrite(**pin, value**)
+
+**Parameters:**
+
+**pin**: the Arduino pin number.
+
+**value**: `HIGH` or `LOW`.
 
 When we set the ledPin as output, HIGH means sending high level to the pin, LED turns on.
 
@@ -244,11 +266,17 @@ When we set the led as output, low stands for sending low level to the pin, LED 
 delay(1000);
 ```
 
-**Description:** Pauses the program for the amount of time (in milliseconds) specified as parameter. (There are 1000 milliseconds in a second.)
+**Description:**
 
-**Syntax:** delay(ms)
+Pauses the program for the amount of time (in milliseconds) specified as parameter. (There are 1000 milliseconds in a second.)
 
-**Parameters:** ms: the number of milliseconds to pause. Allowed data types: unsigned long.
+**Syntax:**
+
+delay(**ms**)
+
+**Parameters:** 
+
+**ms**: the number of milliseconds to pause. Allowed data types: unsigned long.
 
 Delay the program by 1000ms(1s).
 
@@ -339,11 +367,17 @@ Define button as the input unit.
 buttonState = digitalRead(buttonPin);
 ```
 
-**Description:** Reads the value from a specified digital pin, either `HIGH` or `LOW`.
+**Description:**
 
-**Syntax:** digitalRead(pin)
+Reads the value from a specified digital pin, either `HIGH` or `LOW`.
 
-**Parameters:** pin: the Arduino pin number you want to read
+**Syntax:**
+
+digitalRead(**pin**)
+
+**Parameters:**
+
+**pin**: the Arduino `pin` number you want to read
 
 This function is used to read the states of digital pins, either HIGH or LOW. When the button is pressed, the state is HIGH, otherwise is LOW.
 
@@ -356,7 +390,9 @@ This function is used to read the states of digital pins, either HIGH or LOW. Wh
 }
 ```
 
-**Description:** The if…​else allows greater control over the flow of code than the basic if statement, by allowing multiple tests to be grouped. An else clause (if at all exists) will be executed if the condition in the if statement results in false. The else can proceed another if test, so that multiple, mutually exclusive tests can be run at the same time.
+**Description:**
+
+The if…​else allows greater control over the flow of code than the basic if statement, by allowing multiple tests to be grouped. An else clause (if at all exists) will be executed if the condition in the if statement results in false. The else can proceed another if test, so that multiple, mutually exclusive tests can be run at the same time.
 
 Each test will proceed to the next one until a true test is encountered. When a true test is found, its associated block of code is run, and the program then skips to the line following the entire if/else construction. If no test proves to be true, the default else block is executed, if one is present, and sets the default behavior.
 
@@ -376,7 +412,7 @@ else {
 }
 ```
 
-The usage of the statement is: if the logical expression in parentheses is true, execute the statement in curly braces after **if**, if not, execute the statement in curly braces after the **else**. If the state of the button is high, the LED pin outputs a high level and turn the LED  on, else turn LED off.
+The usage of the statement is: if the logical expression in parentheses is true, execute the statement in curly braces after **if**, if not, execute the statement in curly braces after the **else**. If the state of the button is high, the LED pin outputs a high level and turn the LED on, else turn LED off.
 
 - **Demo Effect and Serial Print Result:**
 
@@ -426,7 +462,7 @@ The input is an analog signal, so it is connected to the analog signal interface
 ```Cpp
 //Rotary controls LED
 int rotaryPin = A0;    // select the input pin for the rotary
-int ledPin = 6;      // select the pin for the LED
+int ledPin = 4;      // select the pin for the LED
 int rotaryValue = 0;  // variable to store the value coming from the rotary
 
 void setup() {
@@ -454,13 +490,19 @@ void loop() {
 rotaryValue = analogRead(rotaryPin);
 ```
 
-**Description:** Reads the value from the specified analog pin. Arduino boards contain a multichannel, 10-bit analog to digital converter. This means that it will map input voltages between 0 and the operating voltage(5V or 3.3V) into integer values between 0 and 1023. On an Arduino UNO, for example, this yields a resolution between readings of: 5 volts / 1024 units or, 0.0049 volts (4.9 mV) per unit.
+**Description:**
 
-**Syntax:** analogRead(pin)
+Reads the value from the specified analog pin. Arduino boards contain a multichannel, 10-bit analog to digital converter. This means that it will map input voltages between 0 and the operating voltage(5V or 3.3V) into integer values between 0 and 1023. On an Arduino UNO, for example, this yields a resolution between readings of: 5 volts / 1024 units or, 0.0049 volts (4.9 mV) per unit.
 
-**Parameters:** pin: the name of the analog input pin to read from (A0 to A5 on most boards).
+**Syntax:**
 
-**Returns:** The analog reading on the pin. Although it is limited to the resolution of the analog to digital converter (0-1023 for 10 bits or 0-4095 for 12 bits). Data type: `int`.
+analogRead(**pin**)
+
+**Parameters:**
+
+**pin**: the name of the analog input pin to read from (A0 to A5 on most boards).
+
+**Returns:** The analog reading on the pin. Although it is limited to the resolution of the analog to digital converter (0-1023 for 10 bits or 0-4095 for 12 bits). Data type: int.
 
 This function is used to read the value of Analog pins(the rotary sensor position), the range of values is: 0 ~ 1023.
 
@@ -532,11 +574,19 @@ void loop() {
 analogWrite(BuzzerPin, Value);
 ```
 
-**Description:** Writes an analog value (PWM wave) to a pin. Can be used to light a LED at varying brightnesses or drive a motor at various speeds. After a call to analogWrite(), the pin will generate a steady rectangular wave of the specified duty cycle until the next call to analogWrite() (or a call to digitalRead() or digitalWrite()) on the same pin.
+**Description:**
 
-**Syntax:** analogWrite(pin, value)
+Writes an analog value (PWM wave) to a pin. Can be used to light a LED at varying brightnesses or drive a motor at various speeds. After a call to analogWrite(), the pin will generate a steady rectangular wave of the specified duty cycle until the next call to analogWrite() (or a call to digitalRead() or digitalWrite()) on the same pin.
 
-**Parameters:** `pin`: the Arduino pin to write to. Allowed data types: int. `value`: the duty cycle: between 0 (always off) and 255 (always on). Allowed data types: `int`.
+**Syntax:**
+
+analogWrite(**pin, value**)
+
+**Parameters:**
+
+**pin**: the Arduino `pin` to write to. Allowed data types: int. 
+
+**value**: the duty cycle: between `0` (always off) and `255` (always on). Allowed data types: int.
 
 Writes an analog value (PWM wave) to the Buzzer.
 
@@ -600,19 +650,19 @@ int sensorValue = 0;        // value read from the port
 int outputValue = 0;        // value output to the PWM (analog out)
 
 void setup() {
-pinMode(ledPin,OUTPUT);
-Serial.begin(9600);
+  pinMode(ledPin,OUTPUT);
+  Serial.begin(9600);
 }
 
 void loop() {
-// read the analog in value:
-sensorValue = analogRead(sensorpin);
-// map it to the range of the analog out:
-outputValue = map(sensorValue, 0, 1023, 0, 255);
-Serial.println(sensorValue);
-// change the analog out value:
-analogWrite(ledPin, outputValue);
-delay(30);
+  // read the analog in value:
+  sensorValue = analogRead(sensorpin);
+  // map it to the range of the analog out:
+  outputValue = map(sensorValue, 0, 1023, 0, 255);
+  Serial.println(sensorValue);
+  // change the analog out value:
+  analogWrite(ledPin, outputValue);
+  delay(30);
 }
 ```
 
@@ -624,13 +674,21 @@ You can also see the light intensity readings from the **Serial Monitor**, navig
 Serial.begin(9600);
 ```
 
-**Description:** Sets the data rate in bits per second (baud) for serial data transmission. For communicating with Serial Monitor, make sure to use one of the baud rates listed in the menu at the bottom right corner of its screen. You can, however, specify other rates - for example, to communicate over pins 0 and 1 with a component that requires a particular baud rate.
+**Description:**
+
+Sets the data rate in bits per second (baud) for serial data transmission. For communicating with Serial Monitor, make sure to use one of the baud rates listed in the menu at the bottom right corner of its screen. You can, however, specify other rates - for example, to communicate over pins 0 and 1 with a component that requires a particular baud rate.
 
 An optional second argument configures the data, parity, and stop bits. The default is 8 data bits, no parity, one stop bit.
 
 The software running on the computer communicates with the development board, and the baud rate is 9600.
 
-**Syntax:** `Serial.begin(speed)`
+**Syntax:**
+
+Serial.begin(**speed**)
+
+**Parameters:**
+
+**speed**: Speed of Serial communication. i.e `9600`, `115200` and etc.
 
 Set the Serial baud rate to 9600.
 
@@ -638,11 +696,19 @@ Set the Serial baud rate to 9600.
 Serial.println(sensorValue);
 ```
 
-**Description:** Prints data to the serial port as human-readable ASCII text followed by a carriage return character (ASCII 13, or '\r') and a newline character (ASCII 10, or '\n'). This command takes the same forms as Serial.print().
+**Description:**
 
-**Syntax:** `Serial.println(val)` or `Serial.println(val, format)`
+Prints data to the serial port as human-readable ASCII text followed by a carriage return character (ASCII 13, or '\r') and a newline character (ASCII 10, or '\n'). This command takes the same forms as Serial.print().
 
-**Parameters:** `Serial`: serial port object. `val`: the value to print. Allowed data types: any data type. `format`: specifies the number base (for integral data types) or number of decimal places (for floating point types).
+**Syntax:**
+
+Serial.println(**val**) or Serial.println(**val**, **format**)
+
+**Parameters:** 
+
+**val**: the value to print. Allowed data types: any data type.
+
+**format**: specifies the number base (for integral data types) or number of decimal places (for floating point types).
 
 Serial port print the Light sensor’s value.  So you open the **serial monitor** on the IED interface, and you see the value of the output sensor.
 
@@ -650,7 +716,9 @@ Serial port print the Light sensor’s value.  So you open the **serial monitor*
 outputValue = map(sensorValue, 0, 1023, 0, 255);
 ```
 
-**Description:** Re-maps a number from one range to another. That is, a value of **fromLow** would get mapped to **toLow**, a value of **fromHigh** to **toHigh**, values in-between to values in-between, etc.
+**Description:**
+
+Re-maps a number from one range to another. That is, a value of **fromLow** would get mapped to **toLow**, a value of **fromHigh** to **toHigh**, values in-between to values in-between, etc.
 
 Does not constrain values to within the range, because out-of-range values are sometimes intended and useful. The `constrain()` function may be used either before or after this function, if limits to the ranges are desired.
 
@@ -666,24 +734,35 @@ is also valid and works well.
 
 The map() function uses integer math so will not generate fractions, when the math might indicate that it should do so. Fractional remainders are truncated, and are not rounded or averaged.
 
-**Syntax:** `map(value, fromLow, fromHigh, toLow, toHigh)`
+**Syntax:**
 
-**Parameters:** `value`: the number to map. `fromLow`: the lower bound of the value’s current range. `fromHigh`: the upper bound of the value’s current range. `toLow`: the lower bound of the value’s target range. `toHigh`: the upper bound of the value’s target range.
+map(**value, fromLow, fromHigh, toLow, toHigh**)
 
+**Parameters:**
 
+**value**: the number to map.
+
+**fromLow**: the lower bound of the value’s current range.
+
+**fromHigh**: the upper bound of the value’s current range.
+
+**toLow**: the lower bound of the value’s target range.
+
+**toHigh**: the upper bound of the value’s target range.
 
 Mapping light sensor analog signal(0 to 1023)to brightness value of LED(0 to 255).
-Keep equal and potentiometer after mapping the value of the time. **Map** has five parameters, which in turn is: to map the original value, the original value of the minimum value, original value maximum, minimum value after the mapping, mapping the maximum. In this way, the data returned by the sensor can be mapped from its original value of 0-1023 to 0-255.
+
+Keep equal and potentiometer after mapping the value of the time. Map has five parameters, which in turn is: to map the original value, the original value of the minimum value, original value maximum, minimum value after the mapping, mapping the maximum. In this way, the data returned by the sensor can be mapped from its original value of 0-1023 to 0-255.
 
 ```cpp
-analogWrite(ledPin,outputvalue);
+analogWrite(ledPin,255-outputvalue);
 ```
 
 The function is used to write an analog value between 0 - 255 a PWM pin. analogWrite() can only be used for PWM pins. The new mapping data in the previous statement can be output to ledPin to lighten / dim the LED.
 
 - **Demo Effect and Serial Print Result:**
 
-The LED module will change its intensity according to the light intensity of surrounding. The brighter the surrounding, the lighter it gets.
+The LED module will change its intensity according to the light intensity of surrounding. The darker the surrounding, the lighter it gets.
 
 - **Breakout Guide**
 
@@ -729,20 +808,20 @@ You can open the Serial Plotter by clicking **Tools** -> **Serial Plotter**.
 int soundPin = A2; // Analog sound sensor is to be attached to analog
 int ledPin = 4; // Digital LED is to be attached to digital
 void setup() {
-pinMode(ledPin, OUTPUT);
-Serial.begin(9600);
+  pinMode(ledPin, OUTPUT);
+  Serial.begin(9600);
 }
 void loop(){
-int soundState = analogRead(soundPin); // Read sound sensor’s value
-Serial.println(soundState);
-// if the sound sensor’s value is greater than 20, the light will be on for 5 seconds.
-//Otherwise, the light will be turned off
-if (soundState > 20) {
-  digitalWrite(ledPin, HIGH);
-  delay(5000);
-}else{
-  digitalWrite(ledPin, LOW);
-}
+  int soundState = analogRead(soundPin); // Read sound sensor’s value
+  Serial.println(soundState);
+  // if the sound sensor’s value is greater than 200, the light will be on for 5 seconds.
+  //Otherwise, the light will be turned off
+  if (soundState > 200) {
+    digitalWrite(ledPin, HIGH);
+    delay(100);
+  }else{
+    digitalWrite(ledPin, LOW);
+  }
 }
 ```
 
@@ -837,7 +916,9 @@ void loop(void) {
 #include <>
 ```
 
-**Description:** `#include` is used to include outside libraries in your sketch. This gives the programmer access to a large group of standard C libraries (groups of pre-made functions), and also libraries written especially for Arduino.
+**Description:**
+
+`#include` is used to include outside libraries in your sketch. This gives the programmer access to a large group of standard C libraries (groups of pre-made functions), and also libraries written especially for Arduino.
 
 Note that `#include`, similar to `#define`, has no semicolon terminator, and the compiler will yield cryptic error messages if you add one.
 
@@ -847,7 +928,9 @@ Note that `#include`, similar to `#define`, has no semicolon terminator, and the
 #define
 ```
 
-**Description:** `#define` is a useful C++ component that allows the programmer to give a name to a constant value before the program is compiled. Defined constants in arduino don’t take up any program memory space on the chip. The compiler will replace references to these constants with the defined value at compile time.
+**Description:**
+
+`#define` is a useful C++ component that allows the programmer to give a name to a constant value before the program is compiled. Defined constants in arduino don’t take up any program memory space on the chip. The compiler will replace references to these constants with the defined value at compile time.
 
 Force a variable to be the value you want.
 
@@ -861,9 +944,13 @@ Once the object is declared, you can use functions from the library.
 u8x8.begin();
 ```
 
-**Description:** Simplified setup procedure of the display for the Arduino environment. See the setup guide for the selection of a suitable U8g2 constructor.
+**Description:**
 
-**Syntax:** `u8x8.begin(void)`
+Simplified setup procedure of the display for the Arduino environment. See the setup guide for the selection of a suitable U8g2 constructor.
+
+**Syntax:**
+
+u8x8.begin()
 
 Initialize the u8g2 library
 
@@ -871,9 +958,17 @@ Initialize the u8g2 library
 u8x8.setFlipMode(1);
 ```
 
-**Description:** Some displays support a 180 degree rotation of the internal frame buffer. This hardware feature can be controlled with this procedure. Important: Redraw the complete display after changing the flip mode. Best is to clear the display first, then change the flip mode and finally redraw the content. Results will be undefined for any existing content on the screen.
+**Description:**
 
-**Syntax:** `u8x8.setFlipMode(uint8_t mode)`. `mode`: `0` or `1`.
+Some displays support a 180 degree rotation of the internal frame buffer. This hardware feature can be controlled with this procedure. Important: Redraw the complete display after changing the flip mode. Best is to clear the display first, then change the flip mode and finally redraw the content. Results will be undefined for any existing content on the screen.
+
+**Syntax:**
+
+u8x8.setFlipMode(**mode**)
+
+**Parameters:**
+
+**mode**: `0` or `1`
 
 Flips the display 180 degree.
 
@@ -881,9 +976,17 @@ Flips the display 180 degree.
 u8x8.setCursor();
 ```
 
-**Description:** Define the cursor for the print function. Any output of the print function will start at this position.
+**Description:**
 
-**Syntax:** `u8x8.setCursor(uint8_t x, uint8_t y)`. `x`, `y`: Column/row position for the cursor of the print function.
+Define the cursor for the print function. Any output of the print function will start at this position.
+
+**Syntax:**
+
+u8x8.setCursor(**x, y**)
+
+**Parameters:**
+
+**x, y**: Column/row position for the cursor of the print function.
 
 Sets the draw cursor position.
 
@@ -891,9 +994,13 @@ Sets the draw cursor position.
 u8x8.setFont()
 ```
 
-**Description:**  Define a u8x8 font for the glyph and string drawing functions.
+**Description:** 
 
-**Syntax:** `u8x8.setFont(const uint8_t *font_8x8)`.
+Define a u8x8 font for the glyph and string drawing functions.
+
+**Syntax:**
+
+u8x8.setFont(***font_8x8**)
 
 Set the font for display.
 
@@ -947,7 +1054,7 @@ Have you ever wondered about the temperature and humidity of your surroundings? 
 #include <Arduino.h>
 #include <U8x8lib.h>
 
-#define DHTPIN 4     // what pin we're connected to
+#define DHTPIN 3     // what pin we're connected to
 #define DHTTYPE DHT11   // DHT 11 
 DHT dht(DHTPIN, DHTTYPE);
 
@@ -995,9 +1102,13 @@ temp = dht.readTemperature();
 humi = dht.readHumidity();
 ```
 
-**Description:** Functions to be used to read temperature and humidity values from the sensor.
+**Description:**
 
-**Syntax:** `dht.readTemperature()` and `dht.readHumidity()`. Return type: `float`
+Functions to be used to read temperature and humidity values from the sensor.
+
+**Syntax:**
+
+**dht.readTemperature()** and **dht.readHumidity()**. Return type: float.
 
 Call these functions to read the temperature and humidity and store them in defined variables.
 
@@ -1090,9 +1201,13 @@ if (!bmp280.init()) {
 }
 ```
 
-**Description:** Initialize the air pressure sensor.
+**Description:**
 
-**Syntax:** `bmp280.init(void)`
+Initialize the air pressure sensor.
+
+**Syntax:**
+
+**bmp280.init()**
 
 if the Air pressure sensor did not start properly, then prints out error to serial monitor.
 
@@ -1100,9 +1215,13 @@ if the Air pressure sensor did not start properly, then prints out error to seri
 Serial.print(bmp280.getTemperature());
 ```
 
-**Description:** Functions to be used to read temperature value from the sensor.
+**Description:**
 
-**Syntax:** `bmp280.getTemperature()`. Return type: `float`
+Functions to be used to read temperature value from the sensor.
+
+**Syntax:**
+
+**bmp280.getTemperature()**. Return type: float
 
 Prints the the temperature data to serial monitor.
 
@@ -1110,9 +1229,13 @@ Prints the the temperature data to serial monitor.
 Serial.print(pressure = bmp280.getPressure());
 ```
 
-**Description:** Functions to be used to read air pressure value from the sensor.
+**Description:**
 
-**Syntax:** `bmp280.getPressure()`. Return type: `float`
+Functions to be used to read air pressure value from the sensor.
+
+**Syntax:**
+
+**bmp280.getPressure()**. Return type: float
 
 Prints the current air pressure.
 
@@ -1120,9 +1243,17 @@ Prints the current air pressure.
 Serial.print(bmp280.calcAltitude(pressure));
 ```
 
-**Description:** takes the pressure value can convert to altitude.
+**Description:**
 
-**Syntax:** `bmp280.calcAltitude(float)`. Return type: `float`
+Takes the pressure value can convert to altitude.
+
+**Syntax:**
+
+bmp280.calcAltitude(**float**). Return type: float
+
+**Parameter:**
+
+**float**: Pressure value.
 
 Prints the amplitude.
 
@@ -1173,7 +1304,7 @@ This is the last sensor, the triaxial accelerometer, and with this module, you c
 #endif
 
 void setup() {
-    Serial.begin(115200);
+    Serial.begin(9600);
     while (!Serial) {};
     LIS.begin(WIRE); //IIC init
     delay(100);
@@ -1239,17 +1370,29 @@ Serial.print("y:"); Serial.print(LIS.getAccelerationY()); Serial.print("  ");
 Serial.print("z:"); Serial.println(LIS.getAccelerationZ());
 ```
 
-**Description:** Functions to be used to read X-axis value from the sensor.
+**Description:** 
 
-**Syntax:** `LIS.getAccelerationX()`. Return type: `float`
+Functions to be used to read X-axis value from the sensor.
 
-**Description:** Functions to be used to read X-axis value from the sensor.
+**Syntax:**
 
-**Syntax:** `LIS.getAccelerationY()`. Return type: `float`
+**LIS.getAccelerationX()**. Return type: float.
 
-**Description:** Functions to be used to read X-axis value from the sensor.
+**Description:** 
 
-**Syntax:** `LIS.getAccelerationZ()`. Return type: `float`
+Functions to be used to read Y-axis value from the sensor.
+
+**Syntax:**
+
+**LIS.getAccelerationY()**. Return type: float.
+
+**Description:** 
+
+Functions to be used to read Z-axis value from the sensor.
+
+**Syntax:**
+
+**LIS.getAccelerationZ()**. Return type: float.
 
 Prints the 3 axis data to serial monitor.
 
@@ -1358,8 +1501,8 @@ float durt[]=
 };
 
 int length;
-int tonepin=6;
-int ledp=5;
+int tonepin=5;
+int ledp=4;
 
 void setup()
 {
@@ -1451,9 +1594,9 @@ Connect Grove LED to Seeeduino Lotus's digital signal interface **D4**, connect 
   - Copy the following code, click Verify to check for syntax errors.Verify that there are no errors, and you can upload the code.
 
 ```Cpp
-   //light Induction Desk Lamp
+//light Induction Desk Lamp
 int soundPin = A2; // Analog sound sensor is to be attached to analog
-int lightPin = A1; //Analog light sensor is to be attached to analog
+int lightPin = A6; //Analog light sensor is to be attached to analog
 int ledPin = 4; // Digital LED is to be attached to digital
 
 void setup() {
