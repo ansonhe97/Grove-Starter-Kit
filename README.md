@@ -10,7 +10,7 @@ Grove Starter Kit for Arduino is one of the best Arduino Starter Kit for beginne
 
 1. **[Grove - LED](http://wiki.seeedstudio.com/Grove-Red_LED/):** Simple LED module
 2. **[Grove - Buzzer](http://wiki.seeedstudio.com/Grove-Buzzer/):** Piezo Buzzer
-3. **[Grove - OLED Display 0.96"](http://wiki.seeedstudio.com/Grove-OLED_Display_0.96inch/):** 128×64 dot resolution High brightness,self-emission and high contrast ratio Big screen on a compact design Low power consumption.
+3. **[Grove - OLED Display 0.96"](http://wiki.seeedstudio.com/Grove-OLED-Display-0.96-SSD1315/):** 128×64 dot resolution High brightness,self-emission and high contrast ratio Big screen on a compact design Low power consumption.
 4. **[Grove - Button](http://wiki.seeedstudio.com/Grove-Button/):** Push button for human input interfaces
 5. **[Grove - Rotary Potentiometer](http://wiki.seeedstudio.com/Grove-Rotary_Angle_Sensor/):** Rotary knob for human input interfaces
 6. **[Grove - Light](http://wiki.seeedstudio.com/Grove-Light_Sensor/):** Detects surrounding light intensity
@@ -54,7 +54,7 @@ Grove Starter Kit for Arduino is one of the best Arduino Starter Kit for beginne
 |Buzzer|x1|
 |**Display Module**||
 |OLED Display|x1|
-|**Grove Cables**|x10|
+|**Grove Cables**|x6|
 |**Micro USB Cable**|x1|
 
 ## Learning Objectives
@@ -1639,6 +1639,16 @@ If the surrounding sound is loud enough or light intensity is low, the LED modul
 Connect the Grove LED to Seeeduino Lotus's digital signal interface **D4**, Connect the Light Sensor to Seeeduino Lotus's analog signal interface **A1**. Connect the Sound Sensor to Seeeduino Lotus's analog signal interface **A2** using a Grove cable.
 
 ## Resources
+
+1. **Modules Libraries on Github:**
+   - [OLED Display](https://github.com/olikraus/U8g2_Arduino)
+   - [Temperature & Humidity Sensor](https://github.com/Seeed-Studio/Grove_Temperature_And_Humidity_Sensor)
+   - [Air Pressure Sensor](https://github.com/Seeed-Studio/Grove_BMP280)
+   - [3-Axis Accelerator](https://github.com/Seeed-Studio/Seeed_Arduino_LIS3DHTR)
+
+2. [**Sensor Datasheet**](https://github.com/SeeedDocument/Grove-Starter-Kit-For-Arduino/raw/master/res/Grove-starter-kit-for-arduino-datasheet.zip)
+
+3. Initial Firmware
 
 ## More Learning
 
