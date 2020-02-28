@@ -1648,7 +1648,7 @@ Connect the Grove LED to Seeeduino Lotus's digital signal interface **D4**, Conn
 
 2. [**Sensor Datasheet**](https://github.com/SeeedDocument/Grove-Starter-Kit-For-Arduino/raw/master/res/Grove-starter-kit-for-arduino-datasheet.zip)
 
-3. Initial Firmware
+3. [**Initial Arduino Firmware Demo**](https://github.com/SeeedDocument/Grove-Starter-Kit-For-Arduino/raw/master/res/GroveStarterKitFirmware.zip)
 
 ## More Learning
 
