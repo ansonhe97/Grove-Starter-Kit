@@ -40,7 +40,15 @@ Grove Beginner Kit for Arduino is one of the best Arduino Beginner Kit for begin
 
 ### Breakout Instruction
 
-tmp
+If you prefer to use the modules in else where then you can simply follow the procedures to break the moudules out!
+
+**Step 1**
+
+Use a knife or a sharp object to cut at the stamp holes that connects the sensors toghther
+
+**Step 2**
+
+Shake the modules up and down and it should come out quite easily!
 
 ## Part List
 
