@@ -547,6 +547,15 @@ void loop() {
 - <font size=5;font color=#314B9F >Code Analysis</font>
 
 ```cpp
+int rotaryPin = A0;    // select the input pin for the rotary
+int ledPin = 4;      // select the pin for the LED
+```
+
+To **define for Analog Pin**, use A + the number of the Pin (For Example here `A0`).
+
+To **define for Digital Pin**, use just the number of the pin (For Example here `4`).
+
+```cpp
 rotaryValue = analogRead(rotaryPin);
 ```
 
