@@ -550,6 +550,9 @@ void loop() {
 int rotaryPin = A0;    // select the input pin for the rotary
 int ledPin = 4;      // select the pin for the LED
 ```
+**Description:**
+
+You may find that we define rotatePin and ledPin in different ways. This is because Rotary Potentiometer generates an analog signal, and the LED is controlled by a digital signal.
 
 To **define for Analog Pin**, use A + the number of the Pin (For Example here `A0`).
 
@@ -712,6 +715,12 @@ Adjust the potentiometer to adjust the volume of the buzzer beeps.
 - <font size=5;font color=#314B9F >Breakout Guide</font>
 
 Use a Grove cable to connect the Grove Buzzer to Seeeduino Lotus's digital interface **D5**.
+
+- <font size=5;font color=#314B9F >PWM Usage</font>
+
+Now that we have learned the use of PWM, in addition to using PWM to control the buzzer's sound level, we can also use PWM to control the speed of the motor and the brightness of the LED lights and etc.
+
+However, the LED Module on the Grove Beginner Kit cannot be directly controlled by PWM, because the LED module is connected to D4, and as mentioned above, the PWM pins are 3, 5, 6, 9, 10, 11, and pin 4 is not a PWM pin. If you want to control the LED with PWM, you need to pull it down and use the Grove cable to connect to the Grove port with PWM function.
 
 
 ### Lesson 5:  Making an Light Induct LED
@@ -1385,7 +1394,7 @@ The Air pressure readings are display on the Serial Monitor.
 
 - <font size=5;font color=#314B9F >Breakout Guide</font>
 
-Use Grove cable to connect Grove 3-axis Accelerometer to Seeeduino Lotus's **I2C** interface using a Grove cable (note: I2C default address is 0x77 or 0x76).
+Use Grove cable to connect Grove Air Pressure Sensor to Seeeduino Lotus's **I2C** interface using a Grove cable (note: I2C default address is 0x77 or 0x76).
 
 
 
@@ -1538,7 +1547,7 @@ The 3-axis accelerator readings are displayed on the Serial Monitor.
 
 - <font size=5;font color=#314B9F >Breakout Guide</font>
 
-Use Grove cable to connect Grove 3-axis Accelerometer to Seeeduino Lotus's **I2C** interface using a Grove cable (note: I2C default address is 0x4c).
+Use Grove cable to connect Grove 3-axis Accelerometer to Seeeduino Lotus's **I2C** interface using a Grove cable (note: I2C default address is 0x63).
 
 
 
