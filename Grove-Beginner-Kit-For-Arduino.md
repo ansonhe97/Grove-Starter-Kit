@@ -322,6 +322,13 @@ Delay the program by 1000ms(1s).
 
 The LED module will be 1 second on and 1 second off.
 
+**LED Brightness Adjustment:**
+
+<div align=center><img width = 300 src="https://files.seeedstudio.com/wiki/Grove-Beginner-Kit-For-Arduino/img/LED-res.jpeg"/></div>
+</br>
+
+On the Grove LED module, there is a **variable resistor that can be adjusted using a screw driver.** Twist it to make the LED light up brighter!
+
 - <font size=5;font color=#314B9F >Breakout Guide</font>
 
 If modules are broken out from the board. Use a Grove cable to connect the **Grove LED** to Seeeduino Lotus's digital interface **D4**.  
@@ -337,10 +344,11 @@ The first thing we need to know is that the input of the button is a digital sig
 - **Practice:** Use button to turn ON and OFF the LED module
 
 - <font size=5;font color=#314B9F >Components Involved</font>
-      1. Seeeduino Lotus
-      2. Grove LED
-      3. Grove Button
-      4. Grove Cables(If broken out)
+
+    1. Seeeduino Lotus
+    2. Grove LED
+    3. Grove Button
+    4. Grove Cables(If broken out)
 
 ![](http://files.seeedstudio.com/wiki/Grove-Beginner-Kit-For-Arduino/img/Button.png)
 
@@ -474,7 +482,7 @@ Use a Grove cable to connect the Grove LED to Seeeduino Lotus's digital interfac
 
 
 
-### Lesson 3: Controlling the Speed of the Blink
+### Lesson 3: Controlling the Frequency of the Blink
 
 In the last section, we studied that button only has two states, ON/OFF state corresponding 0V and 5V, but in practice, we often counter the need for many states, not just 0V and 5V. Then you need to use Analog Signal! Rotary Potentiometer is a classic example that uses an analog signal.
 
@@ -722,6 +730,7 @@ Now that we have learned the use of PWM, in addition to using PWM to control the
 
 However, the LED Module on the Grove Beginner Kit cannot be directly controlled by PWM, because the LED module is connected to D4, and as mentioned above, the PWM pins are 3, 5, 6, 9, 10, 11, and pin 4 is not a PWM pin. If you want to control the LED with PWM, you need to pull it down and use the Grove cable to connect to the Grove port with PWM function.
 
+All in all, when you want to use the PWM function, make sure to select those pins with a "~" symbol in front of their names.
 
 ### Lesson 5:  Making an Light Induct LED
 
@@ -902,9 +911,9 @@ void setup() {
 void loop(){
   int soundState = analogRead(soundPin); // Read sound sensor’s value
   Serial.println(soundState);
-  // if the sound sensor’s value is greater than 200, the light will be on for 5 seconds.
+  // if the sound sensor’s value is greater than 400, the light will be on for 5 seconds.
   //Otherwise, the light will be turned off
-  if (soundState > 200) {
+  if (soundState > 400) {
     digitalWrite(ledPin, HIGH);
     delay(100);
   }else{
@@ -913,7 +922,9 @@ void loop(){
 }
 ```
 
-You can also see the light intensity readings from the **Serial Monitor**, navigate to **Tools** -> **Serial Plotter**.
+You can also see the light intensity readings from the **Serial Plotter**, navigate to **Tools** -> **Serial Plotter**.
+
+**Note: You can also adjust the value according to your surrounding light intensity.**
 
 
 
@@ -1024,7 +1035,7 @@ void loop(void) {
 Note that `#include`, similar to `#define`, has no semicolon terminator, and the compiler will yield cryptic error messages if you add one.
 
 ```cpp
-#define <U8x8lib.h>
+#include <U8x8lib.h>
 ```
 
 **#include** is an instruction that introduces a header file. Here we use the U8x8lib.h library.
@@ -1769,8 +1780,8 @@ void setup() {
   pinMode(ledPin, OUTPUT);
   pinMode(lightPin, INPUT);
   pinMode(soundPin, INPUT);
-
 }
+
 void loop(){
   int soundState = analogRead(soundPin); // Read sound sensor’s value
   int lightState = analogRead(lightPin); // Read light sensor’s value
