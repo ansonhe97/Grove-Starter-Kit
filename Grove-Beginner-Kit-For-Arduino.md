@@ -1737,9 +1737,6 @@ Connect Grove LED to Seeeduino Lotus's digital signal interface **D4**, connect 
     - The Seeeduino is then connected to the computer via a USB cable.
 
 
-
-
-
 - <font size=5;font color=#314B9F >Software Code</font>
     - Open Arduino IDE.
     - Copy the following code, click Verify to check for syntax errors. Verify that there are no errors, and you can upload the code.
@@ -1752,6 +1749,9 @@ int ledPin = 4; // Digital LED is to be attached to digital
 
 void setup() {
   pinMode(ledPin, OUTPUT);
+  pinMode(lightPin, INPUT);
+  pinMode(soundPin, INPUT);
+
 }
 void loop(){
   int soundState = analogRead(soundPin); // Read sound sensor’s value
