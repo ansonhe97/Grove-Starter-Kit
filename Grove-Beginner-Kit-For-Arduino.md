@@ -719,7 +719,7 @@ Serial Monitor is a useful tool to observe results on Arduino, it can be very us
 
 ![](http://files.seeedstudio.com/wiki/Grove-Beginner-Kit-For-Arduino/img/Serial.jpg)
 
-You can open the Serial Plotter by clicking **Tools** -> **Serial Plotter**.
+You can open the Serial Monitor by clicking **Tools** -> **Serial Monitor**.
 
 ![](http://files.seeedstudio.com/wiki/Grove-Beginner-Kit-For-Arduino/img/20200217144001.jpg)
 
