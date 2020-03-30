@@ -59,7 +59,7 @@ Shake the modules up and down and it should come out quite easily!
 ## Part List
 
 |Modules|Quantity|
-|---|---|---|
+|---|---|
 |**Sensors**||
 |Temperature & Humidity Sensors|x1|
 |3-Axis Accelerometers|x1|
@@ -76,7 +76,6 @@ Shake the modules up and down and it should come out quite easily!
 |OLED Display|x1|
 |**Grove Cables**|x6|
 |**Micro USB Cable**|x1|
-
 
 
 ## Learning Objectives
